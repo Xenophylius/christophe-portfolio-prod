@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400..700;1,400..700&family=Noto+Znamenny+Musical+Notation&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400..700;1,400..700&family=Noto+Znamenny+Musical+Notation&family=Spinnaker&display=swap');
+
+:root {
+    --main-bg-color: #0E1511;
+    --second-bg-color: #B2B3BD;
+    --tertiaire-bg-color: #19191B;
+    --hover-text-color: #30A46C;
+    --interactive-component-color: #35423B;
+    --interactive-component-second-color: #222325;
+    --border-separator-color: #626F68;
+    --title-color: #30A46C;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    font-family: "Spinnaker", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Brygada 1918", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.brygada {
+  font-family: "Brygada 1918", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+nav {
+    background-color: var(--main-bg-color);
+}
+
+.blurDiv {
+    backdrop-filter: blur(10px);   
+}
+
+.textColor {
+    color: var(--second-bg-color);
+}
+
+.textColor:hover {
+    color: var(--hover-text-color);
+}
+
+.textColor2 {
+    color: var(--second-bg-color);
+}
+
+.mainColor {
+    color: var(--main-bg-color);
+}
+
+.bgMainColor  {
+    background-color: var(--main-bg-color);
+}
+
+.bgSecondColor  {
+    background-color: var(--hover-text-color);
+}
+
+.interactiveComponentColor {
+    background-color: var(--interactive-component-color);
+    
+}
+
+#langageFlag {
+  height: 28px;
+}
+
+.interactiveComponentColorSecond {
+    background-color: var(--interactive-component-second-color);
+    
+    border-color: var(--interactive-component-second-color);
+    color: var(--hover-text-color);
+}
+
+.hoverScale {
+    transition: all 0.3s ease-in-out;
+}
+
+.hoverScale:hover {
+    transform: scale(1.1);
+    color: var(--hover-text-color);
+}
+
+#profilPicture {
+  height: 35vh;
+}
+
+.secondBackgroundColor  {
+    background-color: var(--main-bg-color);
+}
+
+.titleColor {
+    color: var(--title-color);
+}
+
+
+  .swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 30%;
+    height: auto;
+  }
+
+  @media screen and (max-width: 962px) {
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 50%;
+      height: auto;
+    }
+  }
+
+  @media screen and (max-width: 587px) {
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 80%;
+      height: auto;
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      text-align: center;
+      height: auto;
+    }
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+  }
+
+.container-head {
+  color: #e5e5e5;
+  font-size: 2rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.animation {
+  height:50px;
+  overflow:hidden;
+  
+}
+
+.animation > div > div {
+  /* padding: 0.25rem 0.75rem; */
+  height:2.81rem;
+  margin-bottom: 2.81rem;
+  display:inline-block;
+}
+
+.animation div:first-child {
+  animation: text-animation 6s infinite;
+}
+
+.first div {
+  background-color:#30A46C;
+}
+.second div {
+  background-color:#CD921E;
+}
+.third div {
+  background-color:#c10528;
+}
+
+@keyframes text-animation {
+  0% {margin-top: 0;}
+  10% {margin-top: 0;}
+  20% {margin-top: -5.62rem;}
+  30% {margin-top: -5.62rem;}
+  40% {margin-top: -11.24rem;}
+  60% {margin-top: -11.24rem;}
+  70% {margin-top: -5.62rem;}
+  80% {margin-top: -5.62rem;}
+  90% {margin-top: 0;}
+  100% {margin-top: 0;}
+}
