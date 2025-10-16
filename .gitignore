@@ -1,0 +1,24 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.pnpm-store/
+.DS_Store
+
+# Composer / PHP
+/vendor/
+composer.lock
+.env
+.env.local
+.phpunit.result.cache
+
+# OS / éditeurs
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# Build / cache
+dist/
+build/
+.cache/

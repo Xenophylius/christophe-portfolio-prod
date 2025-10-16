@@ -2,17 +2,16 @@ var swiper = new Swiper(".mySwiper", {
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: true,
+    mousewheel: true,
     slidesPerView: "auto",
     coverflowEffect: {
       rotate: 50,
       stretch: 0,
       depth: 100,
       modifier: 1,
-      slideShadows: true,
     },
-    pagination: {
-      el: ".swiper-pagination",
-    },
+    
+    
   });
 
   document.querySelector('#lightMod').addEventListener('click', (ev) => {
@@ -20,6 +19,7 @@ var swiper = new Swiper(".mySwiper", {
     let root = document.querySelector(':root')
     root.style.setProperty('--main-bg-color', '#F4FBF6')
     root.style.setProperty('--second-bg-color', '#0E1511')
+    root.style.setProperty('--icon-color', '#0E1511')
     let toggle = document.querySelector('#navToggle')
     toggle.classList.toggle('navbar-light')
     toggle.classList.toggle('navbar-dark')
@@ -31,6 +31,7 @@ var swiper = new Swiper(".mySwiper", {
     let root = document.querySelector(':root')
     root.style.setProperty('--main-bg-color', '#0E1511')
     root.style.setProperty('--second-bg-color', '#B2B3BD')
+    root.style.setProperty('--icon-color', '#B2B3BD')
     let toggle = document.querySelector('#navToggle')
     toggle.classList.toggle('navbar-light')
     toggle.classList.toggle('navbar-dark')
@@ -141,3 +142,28 @@ function scrollFunction() {
         
     }
 }
+
+// window.addEventListener("DOMContentLoaded", (event) => {
+//   animate_text();
+// });
+// function animate_text() 
+// {
+//   let delay = 70,
+//       delay_start = 0,
+//       contents,
+//       letters;
+
+//   document.querySelectorAll(".animate-text").forEach(function (elem) {
+//     contents = elem.textContent.trim();
+//     elem.textContent = "";
+//     letters = contents.split("");
+//     elem.style.visibility = 'visible';
+
+//     letters.forEach(function (letter, index_1) {
+//       setTimeout(function () {
+//         elem.textContent += letter;
+//       }, delay_start + delay * index_1);
+//     });    
+//     delay_start += delay * letters.length;
+//   });
+// }

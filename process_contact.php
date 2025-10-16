@@ -22,32 +22,34 @@
       $mail = new PHPMailer (true);
       // (…)
 
-      $mail->isSMTP();
-      $mail->SMTPAuth = true;
-      
-      // Informations personnelles
-      $mail->Host = "smtp.elasticemail.com";
-      $mail->Port = 2525;
-      $mail->Username = $_ENV['KEY_ADDRESS'];
-      $mail->Password = $_ENV['KEY_MAIL'];
-      $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+$mail->isSMTP();
+$mail->SMTPAuth = true;
+$mail->Host = 'smtp.elasticemail.com';
+$mail->Port = 2525;
+$mail->Username = $_ENV['KEY_ADDRESS']; // ton identifiant SMTP EE
+$mail->Password = $_ENV['KEY_MAIL'];    // ton mot de passe SMTP EE
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
-      // Expéditeur
-      $mail->setFrom($_ENV['KEY_ADDRESS'], $mailVerify);
-      // Destinataire dont le nom peut également être indiqué en option
-      $mail->addAddress($_ENV['KEY_ADDRESS'], 'Christophe Delahaye');
+// From = adresse vérifiée chez EE
+$mail->setFrom($_ENV['KEY_ADDRESS'], 'Formulaire site');
+// Pour pouvoir répondre au visiteur
+$mail->addReplyTo($mailVerify, $nameVerify);
 
-      $mail->isHTML(true);
-      // Objet
-      $mail->Subject = 'Mail de contact - ' . $nameVerify . ' ' . $mailVerify;
-      // HTML-Content
-      $mail->Body = $messageVerify;
-      $mail->AltBody = 'Le texte comme simple élément textuel';
+// Destinataire
+$mail->addAddress($_ENV['KEY_ADDRESS'], 'Christophe Delahaye');
 
-      $mail->CharSet = 'UTF-8';
-      $mail->Encoding = 'base64';
+$mail->isHTML(true);
+$mail->Subject = 'Mail de contact - ' . $nameVerify . ' ' . $mailVerify;
+$mail->Body    = $messageVerify;
+$mail->AltBody = 'Le texte comme simple élément textuel';
 
-      $mail->send();
+$mail->CharSet = 'UTF-8';
+$mail->Encoding = 'base64';
+
+// >>> ICI : flag transactionnel
+$mail->addCustomHeader('IsTransactional', 'True');
+
+$mail->send();
       
       header("Location: index.php?success=Mail envoyé");
       
@@ -59,4 +61,4 @@
         exit;
     }
   }
-?> 
+?>
