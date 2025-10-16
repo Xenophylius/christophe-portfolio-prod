@@ -9,10 +9,73 @@ var swiper = new Swiper(".mySwiper", {
       stretch: 0,
       depth: 100,
       modifier: 1,
+      slideShadows: false, // Désactiver les ombres automatiques
     },
-    
-    
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    // Pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      dynamicBullets: true,
+    },
   });
+
+  // ===== EFFET DE TYPING MODERNE =====
+  
+  // Textes à taper en rotation
+  const typingTexts = [
+    "Développeur Full-Stack",
+    "Créateur d'Applications",
+    "Expert WordPress", 
+    "Expert Prestashop", 
+    "Développeur Mobile"
+  ];
+  
+  let currentTextIndex = 0;
+  let currentCharIndex = 0;
+  let isDeleting = false;
+  const typingSpeed = 100;
+  const deletingSpeed = 50;
+  const pauseTime = 2000;
+  
+  function typeWriter() {
+    const typedTextElement = document.getElementById('typed-text');
+    if (!typedTextElement) return;
+    
+    const currentText = typingTexts[currentTextIndex];
+    
+    if (isDeleting) {
+      // Suppression du texte
+      typedTextElement.textContent = currentText.substring(0, currentCharIndex - 1);
+      currentCharIndex--;
+      
+      if (currentCharIndex === 0) {
+        isDeleting = false;
+        currentTextIndex = (currentTextIndex + 1) % typingTexts.length;
+        setTimeout(typeWriter, 500);
+      } else {
+        setTimeout(typeWriter, deletingSpeed);
+      }
+    } else {
+      // Ajout du texte
+      typedTextElement.textContent = currentText.substring(0, currentCharIndex + 1);
+      currentCharIndex++;
+      
+      if (currentCharIndex === currentText.length) {
+        isDeleting = true;
+        setTimeout(typeWriter, pauseTime);
+      } else {
+        setTimeout(typeWriter, typingSpeed);
+      }
+    }
+  }
+  
+  // Démarrer l'effet de typing après un délai
+  setTimeout(typeWriter, 1000);
 
   document.querySelector('#lightMod').addEventListener('click', (ev) => {
     toggleClass()
@@ -20,6 +83,7 @@ var swiper = new Swiper(".mySwiper", {
     root.style.setProperty('--main-bg-color', '#F4FBF6')
     root.style.setProperty('--second-bg-color', '#0E1511')
     root.style.setProperty('--icon-color', '#0E1511')
+    root.style.setProperty('--gradient-mid-color', '#e8f5ea')
     let toggle = document.querySelector('#navToggle')
     toggle.classList.toggle('navbar-light')
     toggle.classList.toggle('navbar-dark')
@@ -32,6 +96,7 @@ var swiper = new Swiper(".mySwiper", {
     root.style.setProperty('--main-bg-color', '#0E1511')
     root.style.setProperty('--second-bg-color', '#B2B3BD')
     root.style.setProperty('--icon-color', '#B2B3BD')
+    root.style.setProperty('--gradient-mid-color', '#1a2e23')
     let toggle = document.querySelector('#navToggle')
     toggle.classList.toggle('navbar-light')
     toggle.classList.toggle('navbar-dark')
@@ -39,7 +104,8 @@ var swiper = new Swiper(".mySwiper", {
 
   document.querySelector('#frenchMod').addEventListener('click', (ev) => {
     toggleClassLangage()
-    toggleTextLangage('#nav1', 'COMPETENCES')
+    toggleTextLangage('#nav0', 'À PROPOS')
+    toggleTextLangage('#nav1', 'COMPÉTENCES')
     toggleTextLangage('#nav2', 'PROJETS')
     toggleTextLangage('#heroText1', 'Je suis ...')
     toggleTextLangage('#second', 'Développeur Web')
@@ -60,6 +126,7 @@ var swiper = new Swiper(".mySwiper", {
 
   document.querySelector('#ukMod').addEventListener('click', (ev) => {
     toggleClassLangage()
+    toggleTextLangage('#nav0', 'ABOUT')
     toggleTextLangage('#nav1', 'SKILLS')
     toggleTextLangage('#nav2', 'PROJECTS')
     toggleTextLangage('#heroText1', "I'M ...")
@@ -83,6 +150,9 @@ var swiper = new Swiper(".mySwiper", {
     darkMod.classList.toggle('d-none')
     let lightMod = document.querySelector('#lightMod')
     lightMod.classList.toggle('d-none')
+    
+    // Basculer la classe light-mode sur le body pour les styles
+    document.body.classList.toggle('light-mode')
   }
 
   function toggleClassLangage() {
@@ -132,7 +202,7 @@ function scrollFunction() {
   // Get the button
     var mybutton = document.querySelector("#scrollButton");
 
-    if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
         mybutton.style.opacity = 1;
         mybutton.style.visibility = "visible";
        
@@ -167,3 +237,27 @@ function scrollFunction() {
 //     delay_start += delay * letters.length;
 //   });
 // }
+
+// Effet de navbar dynamique au scroll
+window.addEventListener('scroll', function() {
+  const navbar = document.querySelector('.navbar');
+  if (window.scrollY > 100) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// Animation d'apparition des éléments navbar
+document.addEventListener('DOMContentLoaded', function() {
+  const navItems = document.querySelectorAll('.navbar .nav-item');
+  navItems.forEach((item, index) => {
+    item.style.opacity = '0';
+    item.style.transform = 'translateY(-20px)';
+    setTimeout(() => {
+      item.style.transition = 'all 0.5s ease';
+      item.style.opacity = '1';
+      item.style.transform = 'translateY(0)';
+    }, index * 100);
+  });
+});

@@ -1,0 +1,321 @@
+/* ===== SKILLS SECTION ANIMATIONS ===== */
+
+/* Titre principal avec animation */
+.skill-title-animation {
+    animation: fadeInDown 1s ease-out;
+    position: relative;
+}
+
+.skill-underline-animation {
+    animation: expandWidth 1.5s ease-out 0.5s both;
+    transform-origin: center;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes expandWidth {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100px;
+    }
+}
+
+/* Tabs de navigation */
+.skill-tabs {
+    margin-bottom: 2rem;
+}
+
+.skill-tab-btn {
+    background: transparent;
+    border: 2px solid var(--bs-success);
+    color: var(--bs-success);
+    padding: 12px 24px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-tab-btn:hover {
+    background: var(--bs-success);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(48, 164, 108, 0.3);
+}
+
+.skill-tab-btn.active {
+    background: var(--bs-success);
+    color: white;
+    transform: scale(1.05);
+}
+
+.skill-tab-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.skill-tab-btn:hover::before {
+    left: 100%;
+}
+
+/* Cards de compétences */
+.skill-cards-container {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.skill-card {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: default; /* Cursor normal au lieu de pointer */
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+.skill-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: var(--bs-success);
+}
+
+.skill-card:active {
+    transform: translateY(-10px) scale(0.98);
+    transition: all 0.1s ease;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(48, 164, 108, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.skill-card:hover::before {
+    opacity: 1;
+}
+
+.skill-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Container des icônes avec cercle de progression */
+.skill-icon-container {
+    position: relative;
+    display: inline-block;
+}
+
+.skill-progress-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.skill-card:hover .skill-progress-circle {
+    opacity: 1;
+}
+
+.skill-card:hover .skill-icon-container i {
+    opacity: 0.3;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+}
+
+.progress-ring-circle {
+    stroke-dasharray: 164; /* 2 * π * 26 */
+    stroke-dashoffset: 164;
+    transition: stroke-dashoffset 0.8s ease-in-out;
+    stroke-linecap: round;
+}
+
+.progress-text {
+    display: none; /* Cache le texte des pourcentages */
+}
+
+/* Animation de pulsation pour les icônes */
+.skill-card i {
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation: none;
+    transform-origin: center;
+}
+
+.skill-card:active i {
+    transform: scale(0.9);
+}
+
+.skill-card:hover i {
+    animation: pulse 0.6s ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Animation d'entrée pour les cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation staggered pour les cards */
+.skill-card {
+    animation: slideInFromBottom 0.6s ease-out both;
+}
+
+.skill-card:nth-child(1) { animation-delay: 0.1s; }
+.skill-card:nth-child(2) { animation-delay: 0.2s; }
+.skill-card:nth-child(3) { animation-delay: 0.3s; }
+.skill-card:nth-child(4) { animation-delay: 0.4s; }
+.skill-card:nth-child(5) { animation-delay: 0.5s; }
+.skill-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Effet de particules lors du hover */
+.skill-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(48, 164, 108, 0.3) 1px, transparent 1px),
+        radial-gradient(circle at 80% 80%, rgba(48, 164, 108, 0.3) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.skill-card:hover::after {
+    opacity: 1;
+    animation: particles 2s linear infinite;
+}
+
+@keyframes particles {
+    0% {
+        background-position: 0 0, 0 0;
+    }
+    100% {
+        background-position: 20px 20px, -20px -20px;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skill-tab-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    
+    .skill-card {
+        margin-bottom: 20px;
+    }
+    
+    .skill-card:hover {
+        transform: translateY(-8px) scale(1.02);
+    }
+}
+
+/* Animation de loading lors du changement de tab */
+.tab-pane {
+    position: relative;
+}
+
+.tab-pane.show::before {
+    transform: scaleX(1);
+}
+
+/* Effet de glow pour les titres */
+.skill-card h5 {
+    transition: all 0.3s ease;
+    text-shadow: none;
+}
+
+.skill-card:hover h5 {
+    text-shadow: 0 0 10px rgba(48, 164, 108, 0.5);
+    transform: scale(1.05);
+}
+
+/* ===== ADAPTATION MODE CLAIR/SOMBRE POUR SKILLS ===== */
+
+/* Mode sombre (par défaut) - couleurs déjà définies */
+
+/* Mode clair */
+.light-mode .skill-tab-btn {
+    background: transparent;
+    border-color: var(--bs-success);
+    color: var(--bs-success);
+}
+
+.light-mode .skill-tab-btn:hover {
+    background: var(--bs-success);
+    color: white;
+    box-shadow: 0 10px 25px rgba(48, 164, 108, 0.4);
+}
+
+.light-mode .skill-tab-btn.active {
+    background: var(--bs-success);
+    color: white;
+}
+
+.light-mode .skill-card {
+    background: var(--card-bg-light) !important;
+    border: 1px solid var(--card-border-light);
+    box-shadow: 0 4px 15px var(--card-shadow-light);
+}
+
+.light-mode .skill-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border-color: var(--bs-success);
+}

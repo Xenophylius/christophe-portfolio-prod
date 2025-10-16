@@ -1,0 +1,683 @@
+/* ===== PROJECTS SECTION STYLES ===== */
+
+/* Empêcher le débordement horizontal et vertical temporaire */
+body {
+    overflow-x: hidden !important;
+}
+
+/* Stabiliser le layout pendant le chargement */
+html {
+    overflow-x: hidden !important;
+}
+
+/* Empêcher les scrollbars temporaires pendant les animations */
+.container-fluid {
+    overflow-x: hidden !important;
+}
+
+.container-fluid,
+.container {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+/* Correction pour la navbar - empêcher les scrollbars au survol */
+.navbar,
+.navbar-nav,
+.nav-link {
+    overflow: hidden !important;
+}
+
+/* Empêcher l'effet hoverScale dans la navbar qui cause des scrollbars */
+.navbar .hoverScale:hover {
+    transform: none !important; /* Annule l'effet scale dans la navbar */
+}
+
+.navbar-nav .nav-link {
+    transform: none !important; /* Empêche les transformations qui causent le débordement */
+}
+
+.navbar-nav .nav-link:hover {
+    transform: none !important; /* Empêche les transformations au survol */
+}
+
+/* Correction pour la section compétences - empêcher les scrollbars qui clignotent */
+#skills,
+.skills-section,
+.tab-content,
+.tab-pane {
+    overflow: hidden !important; /* Cache tout débordement */
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Stabiliser les animations des cartes de compétences */
+.skill-card {
+    overflow: hidden !important;
+    /* Garder les animations mais les limiter pour éviter les débordements */
+}
+
+.skill-card:hover {
+    /* Réduire les transformations pour éviter les débordements */
+    transform: translateY(-2px) scale(1.02) !important; /* Animation réduite */
+}
+
+/* Empêcher les débordements lors des transitions entre onglets */
+.fade {
+    overflow: hidden !important;
+}
+
+.fade.show {
+    overflow: hidden !important;
+}
+
+/* Stabiliser spécifiquement les animations qui peuvent causer des scrollbars */
+.skills-section .row,
+.skills-section .col-md-4,
+.skills-section .col-md-6 {
+    overflow: hidden !important;
+}
+
+/* Limiter les animations pendant les transitions d'onglets */
+.tab-pane.active {
+    overflow: hidden !important;
+}
+
+.tab-pane:not(.active) {
+    overflow: hidden !important;
+}
+
+/* Swiper customization */
+.mySwiper {
+    padding: 20px 0 80px 0;
+    width: 100%; /* Largeur normale sans débordement */
+    margin: 0 auto; /* Centrage simple */
+    overflow: hidden; /* Cache tout débordement */
+    max-width: 100%; /* Assure qu'il ne dépasse jamais l'écran */
+}
+
+.swiper-slide {
+    display: flex !important;
+    justify-content: center;
+    align-items: stretch !important; /* Permet à la carte de s'étendre sur toute la hauteur */
+    padding: 10px 2%; /* Padding encore plus réduit pour éviter le débordement */
+    width: 80%;
+    box-sizing: border-box !important;
+    max-width: 100%; /* Assure qu'il ne dépasse jamais */
+}
+
+.swiper-pagination-bullet {
+    background: var(--bs-success);
+    opacity: 0.5;
+    width: 12px;
+    height: 12px;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Override complet des styles Swiper par défaut */
+.mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev {
+    color: white !important;
+    background: var(--bs-success) !important;
+    background-color: var(--bs-success) !important;
+    border-radius: 50% !important;
+    width: 50px !important;
+    height: 50px !important;
+    margin-top: 0 !important;
+    backdrop-filter: blur(10px) !important;
+    transition: all 0.3s ease !important;
+    border: 2px solid var(--bs-success) !important;
+    /* Forcer l'override des styles par défaut Swiper */
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+.mySwiper .swiper-button-next:after,
+.mySwiper .swiper-button-prev:after {
+    color: white !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+}
+
+.mySwiper .swiper-button-next:hover,
+.mySwiper .swiper-button-prev:hover {
+    background: var(--bs-success) !important;
+    background-color: var(--bs-success) !important;
+    transform: scale(1.1) !important;
+    box-shadow: 0 4px 15px rgba(48, 164, 108, 0.4) !important;
+}
+
+/* States spécifiques */
+.mySwiper .swiper-button-disabled {
+    background: var(--bs-success) !important;
+    background-color: var(--bs-success) !important;
+    opacity: 0.7 !important;
+}
+
+.mySwiper .swiper-button-disabled:hover {
+    background: var(--bs-success) !important;
+    background-color: var(--bs-success) !important;
+}
+
+/* Cartes de projets avec layout horizontal */
+.project-card {
+    background: transparent !important; /* Pas de fond sur la carte complète */
+    border: 2px solid transparent;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: default; /* Cursor normal au lieu de pointer */
+    position: relative;
+    overflow: hidden;
+    width: 100% !important; /* Utilise toute la largeur disponible du slide */
+    max-width: none; /* Supprime toute limitation de largeur */
+    margin: 0 auto;
+    display: block !important; /* Revenir à block pour éviter les conflits flex */
+    box-sizing: border-box !important;
+}
+
+
+
+.project-card:hover {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    border-color: var(--bs-success);
+}
+
+/* Container d'image */
+.project-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 100%; /* Prend toute la hauteur de sa colonne */
+    border-radius: 1rem 0 0 1rem; /* Arrondir uniquement les coins de gauche */
+}
+
+/* S'assurer que la structure Bootstrap prend toute la hauteur */
+.project-card .row {
+    height: 100%; /* La row prend toute la hauteur de la carte */
+    flex: 1; /* Permet à la row de s'étendre dans le flex container */
+}
+
+.project-card .row > .col-12,
+.project-card .row > .col-md-4,
+.project-card .row > .col-md-8 {
+    height: 100%; /* Les colonnes prennent toute la hauteur de la row */
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.4s ease;
+    filter: brightness(0.9);
+}
+
+/* Contenu du projet */
+.project-content {
+    position: relative;
+    z-index: 2;
+    height: 100%; /* Prend toute la hauteur disponible */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+     /* Couleur de fond uniquement dans le contenu */
+    border-radius: 0 1rem 1rem 0; /* Arrondir uniquement les coins de droite */
+}
+
+.project-title {
+    font-size: 1.4rem;
+    position: relative;
+}
+
+/* Technologies badges */
+.tech-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--second-bg-color); /* Utiliser la couleur du thème au lieu de blanc */
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    margin: 2px;
+}
+
+.tech-badge:hover {
+    background: rgba(48, 164, 108, 0.2);
+    border-color: var(--bs-success);
+    transform: translateY(-2px);
+}
+
+.tech-badge i {
+    font-size: 1rem;
+}
+
+/* Description */
+.project-description {
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.project-quote,
+.project-card .textColor2,
+.project-card .project-description {
+    color: var(--second-bg-color) !important; /* Utiliser la couleur du thème au lieu de blanc */
+    opacity: 0.8;
+}
+
+.project-quote {
+    font-size: 0.9rem;
+    border-left: 3px solid var(--bs-success);
+    padding-left: 15px;
+    margin-left: 10px;
+}
+
+/* Actions du projet */
+.project-actions {
+    margin-top: auto;
+}
+
+.project-actions .btn {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(48, 164, 108, 0.3);
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    /* Suppression de la limite de hauteur fixe */
+    .project-card {
+        max-width: 100%;
+        width: 95%;
+        min-height: auto !important; /* Auto height pour s'adapter au contenu */
+        height: auto !important;
+    }
+    
+    /* Structure en colonne : image en haut, contenu en bas */
+    .project-card .row {
+        flex-direction: column !important;
+        height: auto !important;
+    }
+    
+    /* Image en haut sur toute la largeur */
+    .project-card .col-12.col-md-4 {
+        flex: none !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        order: 1; /* Image en premier */
+    }
+    
+    .project-card .col-12.col-md-8 {
+        flex: none !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        order: 2; /* Contenu en second */
+    }
+    
+    /* Container image - hauteur adaptée */
+    .project-image-container {
+        height: 220px !important; /* Hauteur légèrement plus grande */
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    /* Image responsive */
+    .project-image {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+    }
+    
+    /* Contenu avec padding ajusté */
+    .project-content {
+        padding: 1.5rem !important;
+        height: auto !important; /* Hauteur automatique */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    /* Titre responsive */
+    .project-title {
+        font-size: 1.4rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Technologies badges */
+    .tech-badge {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+        margin: 0.2rem;
+    }
+    
+    /* Description */
+    .project-description {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    /* Quote */
+    .project-quote {
+        font-size: 0.9rem;
+        margin: 1rem 0 !important;
+    }
+    
+    /* Actions */
+    .project-actions {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        gap: 0.5rem !important;
+    }
+    
+    .project-actions .btn {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    /* Cacher les flèches sur mobile */
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none !important;
+    }
+    
+    /* Pagination plus visible sur mobile */
+    .swiper-pagination {
+        bottom: -20px !important;
+        margin-top: 20px !important;
+    }
+    
+    .swiper-pagination-bullet {
+        width: 16px !important;
+        height: 16px !important;
+        margin: 0 6px !important;
+    }
+    
+    /* Override des hauteurs fixes pour mobile */
+    .mySwiper {
+        height: auto !important; /* Pas de hauteur fixe sur mobile */
+    }
+    
+    .swiper-slide {
+        height: auto !important; /* Hauteur automatique pour chaque slide */
+    }
+    
+    .project-card {
+        height: auto !important; /* Hauteur automatique pour les cartes */
+        min-height: auto !important;
+        max-height: none !important;
+    }
+    
+    .project-content {
+        height: auto !important;
+        min-height: auto !important;
+    }
+    
+    .project-image-container {
+        min-height: 220px !important;
+    }
+}
+
+/* Desktop - proportions équilibrées */
+@media (min-width: 769px) {
+    .project-card .col-md-4 {
+        flex: 0 0 42%;
+        max-width: 42%;
+    }
+    
+    .project-card .col-md-8 {
+        flex: 0 0 58%;
+        max-width: 58%;
+    }
+    
+    /* Hauteurs fixes uniquement sur desktop */
+    .mySwiper {
+        height: calc(70vh + 120px); /* Hauteur pour accommoder les cartes + padding */
+    }
+    
+    .swiper-slide {
+        height: 70vh !important; /* Hauteur fixe pour chaque slide */
+    }
+    
+    .project-card {
+        height: 70vh !important;
+        min-height: 70vh !important;
+        max-height: 70vh !important;
+    }
+    
+    .project-content {
+        height: 70vh !important;
+        min-height: 70vh !important;
+    }
+}
+
+/* ===== SWIPER NAVIGATION & PAGINATION STYLES ===== */
+
+/* Boutons de navigation - styles déjà définis plus haut */
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Pagination (petites boules) */
+.swiper-pagination {
+    bottom: -30px !important;
+    position: relative !important;
+    margin-top: 30px;
+}
+
+.swiper-pagination-bullet {
+    background: rgba(48, 164, 108, 0.6) !important;
+    opacity: 1 !important;
+    width: 14px;
+    height: 14px;
+    transition: all 0.3s ease;
+    z-index: 10;
+    margin: 0 4px;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--bs-success) !important;
+    transform: scale(1.3);
+}
+
+.swiper-pagination-bullet:hover {
+    background: var(--bs-success) !important;
+    transform: scale(1.2);
+}
+
+/* ===== MODE CLAIR/SOMBRE ADAPTATION ===== */
+
+/* Variables CSS pour mode sombre (par défaut) */
+:root {
+    --card-bg-dark: #1a1a1a;
+    --card-bg-light: #ffffff;
+    --card-border-dark: rgba(255, 255, 255, 0.1);
+    --card-border-light: rgba(0, 0, 0, 0.1);
+    --card-shadow-dark: rgba(0, 0, 0, 0.5);
+    --card-shadow-light: rgba(0, 0, 0, 0.15);
+}
+
+/* Mode sombre (par défaut) */
+.project-card {
+    background: var(--card-bg-dark) !important;
+    border: 1px solid var(--card-border-dark);
+    box-shadow: 0 8px 25px var(--card-shadow-dark);
+}
+
+.skill-card {
+    background: var(--card-bg-dark) !important;
+    border: 1px solid var(--card-border-dark);
+}
+
+/* Adaptation pour mode clair */
+.light-mode .project-card {
+    background: var(--card-bg-light) !important;
+    border: 1px solid var(--card-border-light);
+    box-shadow: 0 8px 25px var(--card-shadow-light);
+}
+
+.light-mode .skill-card {
+    background: var(--card-bg-light) !important;
+    border: 1px solid var(--card-border-light);
+}
+
+/* Adaptation du texte pour mode clair */
+.light-mode .tech-badge {
+    color: var(--second-bg-color) !important; /* En mode clair, --second-bg-color devient sombre */
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.light-mode .project-quote,
+.light-mode .project-card .textColor2,
+.light-mode .project-card .project-description {
+    color: var(--second-bg-color) !important; /* En mode clair, --second-bg-color devient sombre */
+}
+
+.light-mode .mySwiper .swiper-button-next,
+.light-mode .mySwiper .swiper-button-prev {
+    background: var(--bs-success) !important;
+    background-color: var(--bs-success) !important;
+    border: 2px solid var(--bs-success) !important;
+    color: white !important;
+}
+
+.light-mode .mySwiper .swiper-button-next:after,
+.light-mode .mySwiper .swiper-button-prev:after {
+    color: white !important;
+}
+
+.light-mode .mySwiper .swiper-button-next:hover,
+.light-mode .mySwiper .swiper-button-prev:hover {
+    background: var(--bs-success) !important;
+    background-color: var(--bs-success) !important;
+    box-shadow: 0 4px 15px rgba(48, 164, 108, 0.5) !important;
+}
+
+.light-mode .mySwiper .swiper-button-disabled {
+    background: var(--bs-success) !important;
+    background-color: var(--bs-success) !important;
+    opacity: 0.7 !important;
+}
+
+/* Override ultra-spécifique pour forcer les couleurs ET supprimer les effets 3D */
+.swiper.mySwiper .swiper-button-next,
+.swiper.mySwiper .swiper-button-prev,
+div.swiper.mySwiper .swiper-button-next,
+div.swiper.mySwiper .swiper-button-prev {
+    background: #30a46c !important;
+    background-color: #30a46c !important;
+    color: #ffffff !important;
+    /* Supprimer tous les effets 3D et ombres du coverflow */
+    transform: none !important;
+    transform-style: flat !important;
+    box-shadow: none !important;
+    filter: none !important;
+    perspective: none !important;
+    z-index: 100 !important;
+    /* Forcer la position normale */
+    position: absolute !important;
+    top: 50% !important;
+    margin-top: -25px !important;
+}
+
+.swiper.mySwiper .swiper-button-next {
+    right: 10px !important;
+}
+
+.swiper.mySwiper .swiper-button-prev {
+    left: 10px !important;
+}
+
+.swiper.mySwiper .swiper-button-next:after,
+.swiper.mySwiper .swiper-button-prev:after,
+div.swiper.mySwiper .swiper-button-next:after,
+div.swiper.mySwiper .swiper-button-prev:after {
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+.swiper.mySwiper .swiper-button-next:hover,
+.swiper.mySwiper .swiper-button-prev:hover,
+div.swiper.mySwiper .swiper-button-next:hover,
+div.swiper.mySwiper .swiper-button-prev:hover {
+    background: #30a46c !important;
+    background-color: #30a46c !important;
+    color: #ffffff !important;
+    transform: scale(1.1) !important; /* Seule transformation autorisée */
+    filter: none !important;
+}
+
+/* Exclusion complète des boutons des effets du conteneur Swiper */
+.mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev {
+    /* Isoler des transformations du parent */
+    transform-style: flat !important;
+    will-change: transform !important;
+    /* Supprimer toute ombre héritée */
+    box-shadow: 0 4px 15px rgba(48, 164, 108, 0.3) !important;
+    /* Supprimer les filtres CSS */
+    filter: none !important;
+    backdrop-filter: none !important;
+    /* Position fixe par rapport au conteneur Swiper */
+    position: absolute !important;
+}
+
+/* Forcer l'apparence normale même avec l'effet coverflow */
+.swiper-3d .swiper-button-next,
+.swiper-3d .swiper-button-prev {
+    transform: translateZ(0) !important;
+}
+
+/* ===== CORRECTION DES SLIDES COVERFLOW ===== */
+
+/* Supprimer le filtre sombre sur les slides non-actives */
+.mySwiper .swiper-slide {
+    /* Supprimer l'assombrissement par défaut du coverflow */
+    filter: none !important;
+    opacity: 1 !important;
+    /* Maintenir la luminosité normale */
+    -webkit-filter: brightness(1) !important;
+    filter: brightness(1) !important;
+}
+
+/* Slide active - s'assurer qu'elle reste normale */
+.mySwiper .swiper-slide-active {
+    filter: none !important;
+    opacity: 1 !important;
+    -webkit-filter: brightness(1) !important;
+    filter: brightness(1) !important;
+}
+
+/* Slides précédente et suivante - supprimer l'assombrissement */
+.mySwiper .swiper-slide-prev,
+.mySwiper .swiper-slide-next {
+    filter: none !important;
+    opacity: 1 !important;
+    -webkit-filter: brightness(1) !important;
+    filter: brightness(1) !important;
+}
+
+/* Supprimer les ombres automatiques du coverflow sur les slides */
+.mySwiper .swiper-slide:before,
+.mySwiper .swiper-slide:after {
+    display: none !important;
+}
+
+/* Override des effets coverflow par défaut */
+.swiper-coverflow .swiper-slide {
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+/* Cartes de projet dans les slides - garder couleurs normales */
+.mySwiper .swiper-slide .project-card {
+    filter: none !important;
+    opacity: 1 !important;
+}
