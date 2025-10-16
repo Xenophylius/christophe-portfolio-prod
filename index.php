@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+    <!-- Toastr CSS désactivé - utilisation du CSS personnalisé dans style.css -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="skills-animations.css">
     <link rel="stylesheet" href="projects-styles.css">
@@ -991,7 +991,59 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-2.0.3.min.js" ></script>
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+	  <script src="toastr.min.js"></script>
+    
+    <!-- Configuration et gestion des notifications toastr -->
+    <script>
+      $(document).ready(function() {
+        // Configuration toastr moderne
+        toastr.options = {
+          "closeButton": true,
+          "debug": false,
+          "newestOnTop": true,
+          "progressBar": true,
+          "positionClass": "toast-top-right",
+          "preventDuplicates": true,
+          "onclick": null,
+          "showDuration": "300",
+          "hideDuration": "300",
+          "timeOut": "5000",
+          "extendedTimeOut": "1000",
+          "showEasing": "swing",
+          "hideEasing": "linear",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut",
+          "tapToDismiss": true,
+          "escapeHtml": false,
+          "iconClasses": {
+            error: 'toast-error',
+            info: 'toast-info', 
+            success: 'toast-success',
+            warning: 'toast-warning'
+          }
+        };
+          
+        // Vérification des paramètres URL pour afficher les notifications
+        const urlParams = new URLSearchParams(window.location.search);
+        const errorMsg = urlParams.get('error');
+        const successMsg = urlParams.get('success');
+        
+        if (errorMsg) {
+          toastr.error(decodeURIComponent(errorMsg), 'Erreur');
+        }
+        
+        if (successMsg) {
+          toastr.success(decodeURIComponent(successMsg), 'Succès');
+        }
+        
+        // Nettoyer l'URL après affichage des notifications
+        if (errorMsg || successMsg) {
+          const cleanURL = window.location.protocol + "//" + window.location.host + window.location.pathname;
+          window.history.replaceState({}, document.title, cleanURL);
+        }
+      });
+    </script>
+    
     <script src="app.js"></script>
     <script src="skills-interactions.js"></script>    
   </body>

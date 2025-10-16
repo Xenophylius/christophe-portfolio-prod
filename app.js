@@ -169,28 +169,58 @@ var swiper = new Swiper(".mySwiper", {
   }
 
 
-let params = new URLSearchParams(document.location.search);
-let success = params.get("success");
-let error = params.get("error");
+// Configuration globale de toastr
+toastr.options = {
+  "closeButton": true,
+  "debug": false,
+  "newestOnTop": true,
+  "progressBar": true,
+  "positionClass": "toast-top-right",
+  "preventDuplicates": true,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut",
+  "tapToDismiss": true,
+  "escapeHtml": false,
+  "iconClasses": {
+    error: 'toast-error',
+    info: 'toast-info',
+    success: 'toast-success',
+    warning: 'toast-warning'
+  }
+};
 
-if (success != null) {
-    toastr.options.positionClass = 'toast-top-center';
-    toastr.options.showMethod = 'fadeIn';
-    toastr.options.progressBar = true;
-    toastr.options.closeButton = true;
-    toastr.success(success);
+// Gestion des paramètres URL pour les notifications
+document.addEventListener('DOMContentLoaded', function() {
+  const params = new URLSearchParams(window.location.search);
+  const success = params.get("success");
+  const error = params.get("error");
 
-  ;
-}
+  if (success) {
+    console.log('Success message detected:', success);
+    toastr.success(success, "Succès !");
+  }
 
-if (error != null) {
-    toastr.options.positionClass = 'toast-top-center';
-    toastr.options.showMethod = 'fadeIn';
-    toastr.options.progressBar = true;
-    toastr.options.closeButton = true;
-    toastr.error(error);
-  ;
-}
+  if (error) {
+    console.log('Error message detected:', error);
+    toastr.error(error, "Erreur !");
+  }
+  
+  // Nettoyer l'URL après affichage des notifications
+  if (success || error) {
+    const cleanURL = window.location.protocol + "//" + window.location.host + window.location.pathname;
+    window.history.replaceState({}, document.title, cleanURL);
+  }
+});
+
+// ===== NOTIFICATIONS TOASTR =====
+// La configuration et gestion des toastr est maintenant dans index.php
 window.onload = function (){
   var mybutton = document.querySelector("#scrollButton");
     mybutton.style.opacity = 0;
