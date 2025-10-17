@@ -103,7 +103,7 @@
                 <a class="nav-link textColor" href="#skills" id="nav1" >COMPÉTENCES</a>
               </li>
               <li class="nav-item hoverScale ">
-                <a class="nav-link textColor" href="#projects" id="nav2">PROJETS</a>
+                <a class="nav-link textColor" href="#projects" id="nav2">MES RÉALISATIONS</a>
               </li>
               <li class="nav-item hoverScale ">
                 <a class="nav-link textColor" href="#contact">CONTACT</a>
@@ -689,13 +689,336 @@
         <!-- Titre de section Projects -->
         <div class="row justify-content-center">
             <div class="col-12 text-center">
-                <h2 class="section-title" id="projectTitle">PROJETS</h2>
+                <h2 class="section-title" id="projectTitle">MES RÉALISATIONS</h2>
                 <div class="section-separator"></div>
             </div>
         </div>
          <!-- Swiper -->
           <div class="swiper mySwiper z-2">
           <div class="swiper-wrapper">
+              <!-- 1. CyclaParc -->
+              <div class="swiper-slide">
+                <div class="project-card rounded-4 overflow-hidden shadow-lg">
+                    <div class="row g-0">
+                        <!-- Image à gauche -->
+                        <div class="col-12 col-md-4">
+                            <div class="project-image-container">
+                                <img src="images/app-cyclaparc.webp" loading="lazy" class="project-image" alt="Image de l'application CyclaParc - Gestion de flotte de vélos d'entreprise">
+                            </div>
+                        </div>
+                        <!-- Contenu à droite -->
+                        <div class="col-12 col-md-8">
+                            <div class="project-content p-4">
+                                <div>
+                                    <h3 class="project-title titleColor fw-bold mb-3">CYCLAPARC - SAAS B2B</h3>
+                                    
+                                    <!-- Technologies utilisées avec logos -->
+                                    <div class="project-technologies mb-3">
+                                        <div class="d-flex align-items-center flex-wrap gap-1">
+                                            <span class="tech-badge">
+                                                <i class="fa-solid fa-code" style="color: #000000;"></i>
+                                                <span>Symfony 7.1</span>
+                                            </span>
+                                            <span class="tech-badge">
+                                                <i class="fa-brands fa-vuejs" style="color: #4fc08d;"></i>
+                                                <span>Vue 3.3</span>
+                                            </span>
+                                            <span class="tech-badge">
+                                                <i class="fa-brands fa-php" style="color: #777bb4;"></i>
+                                                <span>PHP 8.1+</span>
+                                            </span>
+                                            <span class="tech-badge">
+                                                <i class="fa-brands fa-docker" style="color: #2496ed;"></i>
+                                                <span>Docker</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="project-description textColor2 mb-3">
+                                        Plateforme SaaS complète de <strong>gestion de flottes de vélos d'entreprise</strong> développée avec une 
+                                        <strong>architecture hexagonale moderne</strong>. Solution B2B permettant aux entreprises de gérer efficacement 
+                                        leurs parcs de vélos électriques et traditionnels, depuis l'acquisition jusqu'à la revente.
+                                    </p>
+                                    
+                                    <p class="project-description textColor2 mb-3">
+                                        <strong>Architecture sophistiquée</strong> avec 22 entités interconnectées, intégrations avancées 
+                                        (<strong>Stripe, YouSign, Mailgun</strong>), système de notifications multi-canaux et 
+                                        <strong>API Platform 3.3</strong> pour les APIs REST automatisées.
+                                    </p>
+                                    
+                                    <div class="project-company-info mb-3 p-3 rounded" style="background: rgba(48, 164, 108, 0.1); border-left: 3px solid var(--bs-success);">
+                                        <h5 class="titleColor fw-bold mb-2">
+                                            <i class="fa-solid fa-building me-2"></i>CyclaParc B2B
+                                        </h5>
+                                        <p class="project-description textColor2 mb-2">
+                                            <strong>CyclaParc</strong> est la division B2B de Cyclable, spécialisée dans les 
+                                            <strong>solutions de mobilité d'entreprise</strong>. La plateforme permet aux entreprises 
+                                            de gérer leurs flottes de vélos avec suivi complet du cycle de vie, maintenance programmée 
+                                            et reporting avancé.
+                                        </p>
+                                        <p class="project-description textColor2 mb-0">
+                                            <strong>Fonctionnalités clés :</strong> Gestion multi-entreprises, workflow de vélos complexe, 
+                                            intégrations paiements, signatures électroniques, notifications automatisées et tableaux de bord BI.
+                                        </p>
+                                    </div>
+                                    
+                                    <p class="project-quote fst-italic textColor2 mb-3">
+                                        "Architecture moderne full-stack : SaaS B2B, intégrations complexes, sécurité avancée et business intelligence."
+                                    </p>
+                                </div>
+                                
+                                <div class="project-actions d-flex align-items-center gap-3">
+                                    <a href="https://app.cyclaparc.com/" class="btn btn-success btn-change6" target="_blank">
+                                        <i class="fa-solid fa-external-link-alt me-2"></i>Voir l'application
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="project-card rounded-4 overflow-hidden shadow-lg">
+                    <div class="row g-0">
+                        <!-- Image à gauche -->
+                        <div class="col-12 col-md-4">
+                            <div class="project-image-container">
+                                <img src="images/exchange.webp" loading="lazy" class="project-image" alt="Image de l'application Exchange Pocket - Échange de cartes Pokémon TCG">
+                            </div>
+                        </div>
+                        <!-- Contenu à droite -->
+                        <div class="col-12 col-md-8">
+                            <div class="project-content p-4">
+                                <div>
+                                    <h3 class="project-title titleColor fw-bold mb-3">EXCHANGE POCKET</h3>
+                                    
+                                    <!-- Technologies utilisées avec logos -->
+                                    <div class="project-technologies mb-3">
+                                        <div class="d-flex align-items-center flex-wrap gap-1">
+                                            <span class="tech-badge">
+                                                <i class="fa-brands fa-vuejs" style="color: #4fc08d;"></i>
+                                                <span>Vue.js 3</span>
+                                            </span>
+                                            <span class="tech-badge">
+                                                <i class="fa-solid fa-code" style="color: #000000;"></i>
+                                                <span>Symfony 7.1</span>
+                                            </span>
+                                            <span class="tech-badge">
+                                                <i class="fa-solid fa-wind" style="color: #06b6d4;"></i>
+                                                <span>Tailwind 4</span>
+                                            </span>
+                                            <span class="tech-badge">
+                                                <i class="fa-brands fa-php" style="color: #777bb4;"></i>
+                                                <span>PHP 8.3</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="project-description textColor2 mb-3">
+                                        Application web complète d'<strong>échange de cartes Pokémon TCG Pocket</strong> entre joueurs. 
+                                        <strong>Architecture full-stack moderne</strong> avec Vue.js 3 côté front et Symfony 7.1 + API Platform côté back. 
+                                        Système de <strong>matching automatique</strong> entre offres et demandes d'échange.
+                                    </p>
+                                    
+                                    <p class="project-description textColor2 mb-3">
+                                        <strong>Performances optimisées :</strong> lazy loading, images WebP, Tailwind CSS sans ombres pour éviter les repaints. 
+                                        <strong>API RESTful sécurisée</strong> avec authentification JWT Bearer et architecture SOLID 
+                                        côté front avec composants Vue réutilisables.
+                                    </p>
+                                    
+                                    <div class="project-company-info mb-3 p-3 rounded" style="background: rgba(48, 164, 108, 0.1); border-left: 3px solid var(--bs-success);">
+                                        <h5 class="titleColor fw-bold mb-2">
+                                            <i class="fa-solid fa-exchange-alt me-2"></i>Plateforme d'Échange Gaming
+                                        </h5>
+                                        <p class="project-description textColor2 mb-2">
+                                            Plateforme permettant aux joueurs de <strong>publier des offres d'échange</strong>, consulter les propositions 
+                                            disponibles et <strong>valider automatiquement</strong> les transactions. UX fluide avec routing Vue Router, 
+                                            recherche dynamique et design system cohérent.
+                                        </p>
+                                        <p class="project-description textColor2 mb-0">
+                                            <strong>Architecture technique :</strong> Front séparé du back, API Platform pour les endpoints REST, 
+                                            gestion complexe des relations Doctrine, optimisations mobiles et sécurité production-ready.
+                                        </p>
+                                    </div>
+                                    
+                                    <p class="project-quote fst-italic textColor2 mb-3">
+                                        "Full-stack moderne : Vue.js 3, Symfony 7.1, optimisations performances et architecture SOLID."
+                                    </p>
+                                </div>
+                                
+                                <div class="project-actions d-flex align-items-center gap-3">
+                                    <a href="https://exchange-pocket.vercel.app/" class="btn btn-success btn-change6" target="_blank">
+                                        <i class="fa-solid fa-external-link-alt me-2"></i>Voir l'application
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="project-card rounded-4 overflow-hidden shadow-lg">
+                    <div class="row g-0">
+                        <!-- Image à gauche -->
+                        <div class="col-12 col-md-4">
+                            <div class="project-image-container">
+                                <img src="images/cyclable-ecommerce.webp" loading="lazy" class="project-image" alt="Image représentant le site e-commerce Cyclable.com PrestaShop">
+                            </div>
+                        </div>
+                        <!-- Contenu à droite -->
+                        <div class="col-12 col-md-8">
+                            <div class="project-content p-4">
+                                <div>
+                                    <h3 class="project-title titleColor fw-bold mb-3">REFONTE E-COMMERCE CYCLABLE</h3>
+                                    
+                                    <!-- Technologies utilisées avec logos -->
+                                    <div class="project-technologies mb-3">
+                                        <div class="d-flex align-items-center flex-wrap gap-1">
+                                            <span class="tech-badge">
+                                                <i class="fa-solid fa-shopping-cart" style="color: #df1c40;"></i>
+                                                <span>PrestaShop</span>
+                                            </span>
+                                            <span class="tech-badge">
+                                                <i class="fa-brands fa-php" style="color: #777bb4;"></i>
+                                                <span>PHP 8+</span>
+                                            </span>
+                                            <span class="tech-badge">
+                                                <i class="fa-solid fa-code" style="color: #000000;"></i>
+                                                <span>Symfony</span>
+                                            </span>
+                                            <span class="tech-badge">
+                                                <i class="fa-solid fa-database" style="color: #00758f;"></i>
+                                                <span>MySQL</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="project-description textColor2 mb-3">
+                                        Refonte complète de la plateforme e-commerce Cyclable avec développement de modules PrestaShop sur-mesure. 
+                                        <strong>Module "Cyclable V5"</strong> avec hooks personnalisés et intégration cartographique avancée. 
+                                        Implémentation d'une <strong>architecture CQRS</strong> pour la gestion optimisée des prix spécifiques 
+                                        et développement d'outils de <strong>profiling custom</strong> pour l'analyse des performances.
+                                    </p>
+                                    
+                                    <p class="project-description textColor2 mb-3">
+                                        Création d'un <strong>thème responsive entièrement sur-mesure</strong> adapté au secteur cycliste, 
+                                        avec interface d'administration personnalisée utilisant les <strong>Form types Symfony</strong>. 
+                                        Optimisation du tunnel de commande et respect des bonnes pratiques PrestaShop.
+                                    </p>
+                                    
+                                    <div class="project-company-info mb-3 p-3 rounded" style="background: rgba(48, 164, 108, 0.1); border-left: 3px solid var(--bs-success);">
+                                        <h5 class="titleColor fw-bold mb-2">
+                                            <i class="fa-solid fa-bicycle me-2"></i>À propos de Cyclable
+                                        </h5>
+                                        <p class="project-description textColor2 mb-2">
+                                            <strong>Cyclable</strong> est le <strong>leader français</strong> de la vente de vélos en ligne, 
+                                            spécialisé dans les vélos urbains, électriques et de loisir. L'entreprise propose une large gamme 
+                                            de vélos de qualité avec un service client expert et des solutions de mobilité durable.
+                                        </p>
+                                        <p class="project-description textColor2 mb-0">
+                                            <strong>Objectif du projet :</strong> Moderniser entièrement la boutique e-commerce pour offrir 
+                                            une expérience utilisateur optimale, améliorer les performances et faciliter la gestion 
+                                            des produits complexes du secteur cycliste.
+                                        </p>
+                                    </div>
+                                    
+                                    <p class="project-quote fst-italic textColor2 mb-3">
+                                        "Expertise technique avancée : modules custom, architecture moderne, optimisation performance et UX spécialisée."
+                                    </p>
+                                </div>
+                                
+                                <div class="project-actions d-flex align-items-center gap-3">
+                                    <a href="https://www.cyclable.com/" class="btn btn-success btn-change6" target="_blank">
+                                        <i class="fa-solid fa-external-link-alt me-2"></i>Voir le site
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              
+              <div class="swiper-slide">
+                <div class="project-card rounded-4 overflow-hidden shadow-lg">
+                    <div class="row g-0">
+                        <!-- Image à gauche -->
+                        <div class="col-12 col-md-4">
+                            <div class="project-image-container">
+                                <img src="images/audisio.webp" loading="lazy" class="project-image" alt="Image de l'application Audisio - Interface d'administration moderne">
+                            </div>
+                        </div>
+                        <!-- Contenu à droite -->
+                        <div class="col-12 col-md-8">
+                            <div class="project-content p-4">
+                                <div>
+                                    <h3 class="project-title titleColor fw-bold mb-3">AUDISIO - ADMIN PLATFORM</h3>
+                                    
+                                    <!-- Technologies utilisées avec logos -->
+                                    <div class="project-technologies mb-3">
+                                        <div class="d-flex align-items-center flex-wrap gap-1">
+                                            <span class="tech-badge">
+                                                <i class="fa-solid fa-code" style="color: #000000;"></i>
+                                                <span>Symfony 7.2</span>
+                                            </span>
+                                            <span class="tech-badge">
+                                                <i class="fa-solid fa-wind" style="color: #06b6d4;"></i>
+                                                <span>Tailwind 4</span>
+                                            </span>
+                                            <span class="tech-badge">
+                                                <i class="fa-solid fa-database" style="color: #1565c0;"></i>
+                                                <span>Doctrine 3</span>
+                                            </span>
+                                            <span class="tech-badge">
+                                                <i class="fa-solid fa-cogs" style="color: #ff6f00;"></i>
+                                                <span>API Platform 4</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="project-description textColor2 mb-3">
+                                        Interface d'administration moderne développée avec <strong>Symfony 7.2</strong> et les dernières technologies. 
+                                        Architecture <strong>modulaire avec composants Twig réutilisables</strong>, tableaux DataTables avancés avec 
+                                        export/impression, et <strong>API Platform 4</strong> prête pour l'exposition d'endpoints.
+                                    </p>
+                                    
+                                    <p class="project-description textColor2 mb-3">
+                                        <strong>Stack moderne complète :</strong> Tailwind 4 via PostCSS, Webpack Encore 5, Stimulus/Turbo, 
+                                        Chart.js pour la data-visualisation. UX optimisée avec sidebar responsive, modales utilitaires 
+                                        (calculatrice, bloc-notes) et sécurité renforcée (CSRF, CORS).
+                                    </p>
+                                    
+                                    <div class="project-company-info mb-3 p-3 rounded" style="background: rgba(48, 164, 108, 0.1); border-left: 3px solid var(--bs-success);">
+                                        <h5 class="titleColor fw-bold mb-2">
+                                            <i class="fa-solid fa-stethoscope me-2"></i>Audisio pour MR AUDIO
+                                        </h5>
+                                        <p class="project-description textColor2 mb-2">
+                                            <strong>Application sur-mesure</strong> développée pour <strong>MR AUDIO</strong>, réseau de 7 centres d'audioprothèse. 
+                                            Plateforme d'administration complète pour la gestion multi-centres avec tableaux "no-code" 
+                                            générés via gabarits Twig intelligents et formatage automatique des données métier santé.
+                                        </p>
+                                        <p class="project-description textColor2 mb-0">
+                                            <strong>Spécificités secteur médical :</strong> Gestion patients, rendez-vous multi-centres, stocks audioprothèses, 
+                                            facturation spécialisée. Architecture Symfony 7.2 sécurisée avec composants JS dédiés et 
+                                            conformité RGPD pour données de santé.
+                                        </p>
+                                    </div>
+                                    
+                                    <p class="project-quote fst-italic textColor2 mb-3">
+                                        "Architecture Symfony 7.2 moderne : API Platform, Twig modulaire, UX pragmatique et sécurité production."
+                                    </p>
+                                </div>
+                                
+                                <div class="project-actions d-flex align-items-center gap-3">
+                                    <span class="btn btn-outline-secondary btn-change6 disabled">
+                                        <i class="fa-solid fa-lock me-2"></i>Projet confidentiel
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <!-- 5. Alpine -->
               <div class="swiper-slide">
                 <div class="project-card rounded-4 overflow-hidden shadow-lg">
                     <div class="row g-0">
@@ -746,237 +1069,6 @@
                                         <i class="fa-solid fa-external-link-alt me-2"></i>Voir le projet
                                     </a>
                                     <a href="https://github.com/Xenophylius/alpine" aria-label="Lien vers la page Github du projet Alpine" target="_blank">
-                                        <i class="fa-brands fa-github fa-2x hoverScale" style="color: #eeeef0;"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="project-card rounded-4 overflow-hidden shadow-lg">
-                    <div class="row g-0">
-                        <!-- Image à gauche -->
-                        <div class="col-12 col-md-4">
-                            <div class="project-image-container">
-                                <a href="http://film-harmonik.projets.p8.garage404.com/" target="_blank">
-                                    <img src="images/filmHarmonik.webp" loading="lazy" class="project-image" alt="Image représentant le site film harmonik">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- Contenu à droite -->
-                        <div class="col-12 col-md-8">
-                            <div class="project-content p-4">
-                                <div>
-                                    <h3 class="project-title titleColor fw-bold mb-3">FILM HARMONIK</h3>
-                                    
-                                    <!-- Technologies utilisées avec logos -->
-                                    <div class="project-technologies mb-3">
-                                        <div class="d-flex align-items-center flex-wrap gap-1">
-                                            <span class="tech-badge">
-                                                <i class="fa-brands fa-wordpress" style="color: #21759b;"></i>
-                                                <span>WordPress</span>
-                                            </span>
-                                            <span class="tech-badge">
-                                                <i class="fa-brands fa-php" style="color: #777bb4;"></i>
-                                                <span>PHP</span>
-                                            </span>
-                                            <span class="tech-badge">
-                                                <i class="fa-solid fa-credit-card" style="color: #6772e5;"></i>
-                                                <span>Stripe</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    
-                                    <p class="project-description textColor2 mb-3">
-                                        Site web pour un festival de musique avec système de paiement Stripe intégré. 
-                                        Développement en respectant les normes RGPD et optimisation de l'expérience utilisateur.
-                                    </p>
-                                    
-                                    <p class="project-quote fst-italic textColor2 mb-3">
-                                        "Création d'un site web pour un festival de musique en assurant la conformité RGPD."
-                                    </p>
-                                </div>
-                                
-                                <div class="project-actions d-flex align-items-center gap-3">
-                                    <a href="http://film-harmonik.projets.p8.garage404.com/" class="btn btn-success btn-change6" target="_blank">
-                                        <i class="fa-solid fa-external-link-alt me-2"></i>Voir le projet
-                                    </a>
-                                    <a href="https://github.com/G404-DWWM/RGPD-Festival" aria-label="Lien vers la page Github du projet Festival" target="_blank">
-                                        <i class="fa-brands fa-github fa-2x hoverScale" style="color: #eeeef0;"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="project-card rounded-4 overflow-hidden shadow-lg">
-                    <div class="row g-0">
-                        <!-- Image à gauche -->
-                        <div class="col-12 col-md-4">
-                            <div class="project-image-container">
-                                <a href="https://christophe-hopital.projets.p8.garage404.com/" target="_blank">
-                                    <img src="images/hospital.webp" loading="lazy" class="project-image" alt="Image du site hopital">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- Contenu à droite -->
-                        <div class="col-12 col-md-8">
-                            <div class="project-content p-4">
-                                <div>
-                                    <h3 class="project-title titleColor fw-bold mb-3">HOSPITAL MANAGEMENT</h3>
-                                    
-                                    <!-- Technologies utilisées avec logos -->
-                                    <div class="project-technologies mb-3">
-                                        <div class="d-flex align-items-center flex-wrap gap-1">
-                                            <span class="tech-badge">
-                                                <i class="fa-brands fa-php" style="color: #777bb4;"></i>
-                                                <span>PHP</span>
-                                            </span>
-                                            <span class="tech-badge">
-                                                <i class="fa-solid fa-database" style="color: #00758f;"></i>
-                                                <span>MySQL</span>
-                                            </span>
-                                            <span class="tech-badge">
-                                                <i class="fa-brands fa-html5" style="color: #e34f26;"></i>
-                                                <span>HTML5</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    
-                                    <p class="project-description textColor2 mb-3">
-                                        Application de gestion hospitalière permettant l'ajout de patients et la gestion des rendez-vous. 
-                                        Système complet avec authentification et base de données sécurisée.
-                                    </p>
-                                    
-                                    <p class="project-quote fst-italic textColor2 mb-3">
-                                        "Application pour assistant médical avec gestion de patients et rendez-vous en base de données."
-                                    </p>
-                                </div>
-                                
-                                <div class="project-actions d-flex align-items-center gap-3">
-                                    <a href="https://christophe-hopital.projets.p8.garage404.com/" class="btn btn-success btn-change6" target="_blank">
-                                        <i class="fa-solid fa-external-link-alt me-2"></i>Voir le projet
-                                    </a>
-                                    <a href="https://github.com/Xenophylius/PHPSQL" aria-label="Lien vers la page Github du projet Hospital" target="_blank">
-                                        <i class="fa-brands fa-github fa-2x hoverScale" style="color: #eeeef0;"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="project-card rounded-4 overflow-hidden shadow-lg">
-                    <div class="row g-0">
-                        <!-- Image à gauche -->
-                        <div class="col-12 col-md-4">
-                            <div class="project-image-container">
-                                <a href="https://rumble-react.vercel.app/" target="_blank">
-                                    <img src="images/fightHero.webp" loading="lazy" class="project-image" alt="Image du site rumble react sur Vercel">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- Contenu à droite -->
-                        <div class="col-12 col-md-8">
-                            <div class="project-content p-4">
-                                <div>
-                                    <h3 class="project-title titleColor fw-bold mb-3">FIGHT HERO</h3>
-                                    
-                                    <!-- Technologies utilisées avec logos -->
-                                    <div class="project-technologies mb-3">
-                                        <div class="d-flex align-items-center flex-wrap gap-1">
-                                            <span class="tech-badge">
-                                                <i class="fa-brands fa-react" style="color: #61dafb;"></i>
-                                                <span>React</span>
-                                            </span>
-                                            <span class="tech-badge">
-                                                <i class="fa-solid fa-database" style="color: #764abc;"></i>
-                                                <span>Redux</span>
-                                            </span>
-                                            <span class="tech-badge">
-                                                <i class="fa-brands fa-bootstrap" style="color: #7952b3;"></i>
-                                                <span>Bootstrap</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    
-                                    <p class="project-description textColor2 mb-3">
-                                        Application single page développée avec React et Redux. 
-                                        Création d'un store complexe avec gestion d'état globale et composants réutilisables.
-                                    </p>
-                                    
-                                    <p class="project-quote fst-italic textColor2 mb-3">
-                                        "Création d'un store avec Redux, utilisation de composants et d'actions."
-                                    </p>
-                                </div>
-                                
-                                <div class="project-actions d-flex align-items-center gap-3">
-                                    <a href="https://rumble-react.vercel.app/" class="btn btn-success btn-change6" target="_blank">
-                                        <i class="fa-solid fa-external-link-alt me-2"></i>Voir le projet
-                                    </a>
-                                    <a href="https://github.com/Xenophylius/RumbleReact" aria-label="Lien vers la page Github du projet Fight Hero" target="_blank">
-                                        <i class="fa-brands fa-github fa-2x hoverScale" style="color: #eeeef0;"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="project-card rounded-4 overflow-hidden shadow-lg">
-                    <div class="row g-0">
-                        <!-- Image à gauche -->
-                        <div class="col-12 col-md-4">
-                            <div class="project-image-container">
-                                <a href="https://christophe-chat.projets.p8.garage404.com/" target="_blank">
-                                    <img src="images/chat.webp" loading="lazy" class="project-image" alt="Image du site mini chat">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- Contenu à droite -->
-                        <div class="col-12 col-md-8">
-                            <div class="project-content p-4">
-                                <div>
-                                    <h3 class="project-title titleColor fw-bold mb-3">MINI-CHAT</h3>
-                                    
-                                    <!-- Technologies utilisées avec logos -->
-                                    <div class="project-technologies mb-3">
-                                        <div class="d-flex align-items-center flex-wrap gap-1">
-                                            <span class="tech-badge">
-                                                <i class="fa-brands fa-php" style="color: #777bb4;"></i>
-                                                <span>PHP</span>
-                                            </span>
-                                            <span class="tech-badge">
-                                                <i class="fa-solid fa-shield-alt" style="color: #28a745;"></i>
-                                                <span>Auth</span>
-                                            </span>
-                                            <span class="tech-badge">
-                                                <i class="fa-solid fa-database" style="color: #4479a1;"></i>
-                                                <span>SQL</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    
-                                    <p class="project-description textColor2 mb-3">
-                                        Application de mini-chat développée en PHP avec système d'authentification complet, gestion des utilisateurs et communications en temps réel.
-                                    </p>
-                                    
-                                    <p class="project-quote fst-italic textColor2 mb-3">
-                                        "Construction d'un mini-chat avec authentification, déconnexion, ajax, utilisateurs et plus encore."
-                                    </p>
-                                </div>
-                                
-                                <div class="project-actions d-flex align-items-center gap-3">
-                                    <a href="https://christophe-chat.projets.p8.garage404.com/" class="btn btn-success btn-change6" target="_blank">
-                                        <i class="fa-solid fa-external-link-alt me-2"></i>Voir le projet
-                                    </a>
-                                    <a href="https://github.com/G404-DWWM/Vanilla-TP-MiniChat" aria-label="Lien vers la page Github du projet Mini-Chat" target="_blank">
                                         <i class="fa-brands fa-github fa-2x hoverScale" style="color: #eeeef0;"></i>
                                     </a>
                                 </div>

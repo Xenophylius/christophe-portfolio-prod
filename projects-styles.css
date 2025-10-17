@@ -208,9 +208,64 @@ html {
 .project-image {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    transition: all 0.4s ease;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 3s ease-in-out;
     filter: brightness(0.9);
+    transform: translateY(0);
+}
+
+/* Effet de scroll automatique au hover */
+.project-image-container:hover .project-image {
+    transform: translateY(calc(-100% + 100%));
+}
+
+/* Ajustement spécifique pour l'image Cyclable - approche différente */
+.project-image[src*="cyclable-ecommerce"] {
+    object-fit: contain; /* Garde l'image entière visible */
+    object-position: top; /* Commence par le haut */
+    height: auto; /* Hauteur automatique pour l'image longue */
+    min-height: 100%; /* Minimum la hauteur du container */
+    transition: transform 4s ease-in-out;
+}
+
+.project-image-container:hover .project-image[src*="cyclable-ecommerce"] {
+    transform: translateY(-72%); /* Descend plus loin pour atteindre le footer */
+}
+
+/* Styles spécifiques pour l'image CyclaParc */
+.project-image[src*="app-cyclaparc"] {
+    object-fit: contain; /* Garde l'image entière visible */
+    object-position: top; /* Commence par le haut */
+    height: auto; /* Hauteur automatique pour l'image longue */
+    min-height: 100%; /* Minimum la hauteur du container */
+    transition: transform 4s ease-in-out;
+}
+
+.project-image-container:hover .project-image[src*="app-cyclaparc"] {
+    transform: translateY(-34%); /* Scroll adapté pour l'application CyclaParc */
+}
+
+/* Styles spécifiques pour l'image Audisio */
+.project-image[src*="audisio-admin"] {
+    object-fit: cover; /* Remplit le container */
+    object-position: 0% center; /* Privilégie l'affichage du côté gauche (menu) */
+    width: 100%; /* Prend toute la largeur */
+    height: 100%; /* Prend toute la hauteur */
+    /* Image statique avec menu visible à gauche */
+}
+
+/* Styles spécifiques pour l'image Exchange Pocket */
+.project-image[src*="exchange"] {
+    object-fit: contain; /* Garde l'image entière visible */
+    object-position: top; /* Commence par le haut */
+    height: auto; /* Hauteur automatique pour l'image longue */
+    min-height: 100%; /* Minimum la hauteur du container */
+    transition: transform 4s ease-in-out;
+}
+
+.project-image-container:hover .project-image[src*="exchange"] {
+    transform: translateY(-38%); /* Scroll adapté pour l'application Exchange */
 }
 
 /* Contenu du projet */
