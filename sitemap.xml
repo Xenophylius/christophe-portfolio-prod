@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <!-- Page principale - Accueil avec toutes les sections -->
+    <url>
+        <loc>https://christophe.projets.p8.garage404.com/</loc>
+        <lastmod>2025-10-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Section À propos -->
+    <url>
+        <loc>https://christophe.projets.p8.garage404.com/#about</loc>
+        <lastmod>2025-10-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Section Compétences -->
+    <url>
+        <loc>https://christophe.projets.p8.garage404.com/#skills</loc>
+        <lastmod>2025-10-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Section Projets -->
+    <url>
+        <loc>https://christophe.projets.p8.garage404.com/#projects</loc>
+        <lastmod>2025-10-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Section Contact -->
+    <url>
+        <loc>https://christophe.projets.p8.garage404.com/#contact</loc>
+        <lastmod>2025-10-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- CV PDF (si accessible directement) -->
+    <url>
+        <loc>https://christophe.projets.p8.garage404.com/images/Christophe_delahaye_CV.pdf</loc>
+        <lastmod>2025-10-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+</urlset>

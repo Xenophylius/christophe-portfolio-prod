@@ -13,7 +13,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Christophe Delahaye - Développeur web fullstack passionné. 10+ ans d'expérience, spécialisé Symfony, Vue.js, WordPress. Solutions modernes et performantes centrées utilisateur.">
-    <title>Portfolio Christophe Delahaye - Développeur web et mobile</title>
+    <title>Christophe Delahaye - Développeur Web Fullstack (Symfony / Vue.js)</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="développeur web, fullstack, Symfony, Vue.js, PHP, WordPress, PrestaShop, React, Node.js, développeur freelance, portfolio, Christophe Delahaye">
+    <meta name="author" content="Christophe Delahaye">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <link rel="canonical" href="https://christophe.projets.p8.garage404.com/">
+    
+    <!-- Open Graph Meta Tags pour les réseaux sociaux -->
+    <meta property="og:title" content="Christophe Delahaye - Développeur Web Fullstack (Symfony / Vue.js)">
+    <meta property="og:description" content="Développeur web fullstack passionné. 10+ ans d'expérience, spécialisé Symfony, Vue.js, WordPress. Solutions modernes et performantes centrées utilisateur.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://christophe.projets.p8.garage404.com/">
+    <meta property="og:image" content="https://christophe.projets.p8.garage404.com/images/pictureProfil2.png">
+    <meta property="og:locale" content="fr_FR">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Christophe Delahaye - Développeur Web Fullstack (Symfony / Vue.js)">
+    <meta name="twitter:description" content="Développeur web fullstack passionné. Spécialisé Symfony, Vue.js, WordPress. Solutions modernes et performantes.">
+    <meta name="twitter:image" content="https://christophe.projets.p8.garage404.com/images/pictureProfil2.png">
+    
+    <!-- Schema.org JSON-LD pour les données structurées -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Christophe Delahaye",
+      "jobTitle": "Développeur Web Fullstack",
+      "description": "Développeur web fullstack passionné par la création d'applications modernes et performantes",
+      "url": "https://christophe.projets.p8.garage404.com/",
+      "image": "https://christophe.projets.p8.garage404.com/images/pictureProfil2.png",
+      "knowsAbout": ["PHP", "Symfony", "Vue.js", "JavaScript", "WordPress", "PrestaShop", "React", "Node.js", "HTML5", "CSS3", "Bootstrap", "Tailwind CSS"],
+      "sameAs": [
+        "https://www.linkedin.com/in/christophe-delahaye-b61446186/",
+        "https://github.com/Xenophylius"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      }
+    }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />

@@ -1,0 +1,35 @@
+# Robots.txt pour le portfolio de Christophe Delahaye
+# URL: https://christophe.projets.p8.garage404.com/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://christophe.projets.p8.garage404.com/sitemap.xml
+
+# Fichiers CSS et JS autorisés pour l'indexation
+Allow: /style.css
+Allow: /skills-animations.css
+Allow: /projects-styles.css
+Allow: /app.js
+Allow: /skills-interactions.js
+Allow: /toastr.min.js
+Allow: /toastr.min.css
+
+# Images autorisées
+Allow: /images/
+
+# CV accessible
+Allow: /images/Christophe_delahaye_CV.pdf
+
+# Bloquer les fichiers temporaires et de développement
+Disallow: /*.tmp
+Disallow: /*.log
+Disallow: /*~
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /node_modules/
+Disallow: /process_contact.php
+
+# Crawl-delay pour éviter la surcharge
+Crawl-delay: 1
