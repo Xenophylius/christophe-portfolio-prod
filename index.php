@@ -1206,11 +1206,33 @@
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-pagination"></div>
+            
+            <!-- Indicateurs de glissement mobile -->
+            <div class="swipe-indicators-container d-md-none">
+                <div class="swipe-indicator left">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </div>
+                <div class="swipe-indicator right">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+            
+            <!-- Message d'aide pour le swipe -->
+            <div class="swipe-help-message d-md-none" id="swipeHelpMessage">
+                <i class="fa-solid fa-hand-pointer me-1"></i>
+                Glissez pour voir les autres projets
+            </div>
+            
+            <!-- Barre de progression -->
+            <div class="swipe-progress-container d-md-none">
+                <div class="swipe-progress-bar" id="swipeProgressBar"></div>
+            </div>
+            
           </div>
     </section>
     
-    <!-- Espace pour la pagination du carousel -->
-    <div style="height: 60px;"></div>
+    <!-- Espace pour la pagination du carousel et les indicateurs mobile -->
+    <div style="height: 150px;"></div>
     
     <!-- Contact Section -->
     <section class="container-fluid" id="contact">

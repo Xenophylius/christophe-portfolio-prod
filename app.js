@@ -224,6 +224,101 @@
     }, 500); // Réduit de 1000 à 500ms - suffisant pour l'init Swiper
   }
 
+// ===== GESTION DES INDICATEURS DE SWIPE MOBILE =====
+document.addEventListener('DOMContentLoaded', function() {
+  // Configuration des indicateurs uniquement sur mobile
+  if (window.innerWidth <= 768) {
+    const swiper = document.querySelector('.mySwiper').swiper;
+    const helpMessage = document.getElementById('swipeHelpMessage');
+    const progressBar = document.getElementById('swipeProgressBar');
+    
+    // Variables pour l'état
+    let hasUserInteracted = false;
+    let helpTimeout;
+    
+    // Afficher le message d'aide au début
+    setTimeout(() => {
+      if (helpMessage && !hasUserInteracted) {
+        helpMessage.classList.add('show');
+        
+        // Cacher le message après 4 secondes
+        helpTimeout = setTimeout(() => {
+          helpMessage.classList.add('hide');
+          setTimeout(() => {
+            helpMessage.classList.remove('show', 'hide');
+          }, 500);
+        }, 4000);
+      }
+    }, 1000);
+    
+    // Fonction pour mettre à jour la barre de progression
+    function updateProgressBar() {
+      if (progressBar && swiper) {
+        const totalSlides = swiper.slides.length;
+        const currentIndex = swiper.activeIndex;
+        const progress = ((currentIndex + 1) / totalSlides) * 100;
+        progressBar.style.width = progress + '%';
+      }
+    }
+    
+    // Fonction pour mettre à jour les classes CSS sur le container
+    function updateSwipeIndicators() {
+      const swiperContainer = document.querySelector('.mySwiper');
+      if (swiperContainer && swiper) {
+        // Ajouter/supprimer les classes pour les dégradés de bord
+        if (swiper.activeIndex > 0) {
+          swiperContainer.classList.add('has-prev');
+        } else {
+          swiperContainer.classList.remove('has-prev');
+        }
+        
+        if (swiper.activeIndex < swiper.slides.length - 1) {
+          swiperContainer.classList.add('has-next');
+        } else {
+          swiperContainer.classList.remove('has-next');
+        }
+      }
+    }
+    
+    // Écouter les changements de slide
+    if (swiper) {
+      swiper.on('slideChange', function() {
+        updateProgressBar();
+        updateSwipeIndicators();
+      });
+      
+      // Détecter l'interaction utilisateur
+      swiper.on('touchStart', function() {
+        hasUserInteracted = true;
+        
+        // Cacher immédiatement le message d'aide si visible
+        if (helpMessage && helpMessage.classList.contains('show')) {
+          clearTimeout(helpTimeout);
+          helpMessage.classList.add('hide');
+          setTimeout(() => {
+            helpMessage.classList.remove('show', 'hide');
+          }, 300);
+        }
+      });
+      
+      // Initialiser les états
+      updateProgressBar();
+      updateSwipeIndicators();
+    }
+    
+    // Réinitialiser lors du redimensionnement si on passe en desktop
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        // Cacher tous les indicateurs sur desktop
+        const indicators = document.querySelectorAll('.swipe-indicator, .swipe-help-message, .swipe-progress-container');
+        indicators.forEach(indicator => {
+          indicator.style.display = 'none';
+        });
+      }
+    });
+  }
+});
+
   // ===== EFFET DE TYPING MODERNE =====
   
   // Textes à taper en rotation

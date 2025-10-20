@@ -344,6 +344,12 @@ html {
 
 /* Responsive Mobile */
 @media (max-width: 768px) {
+    /* S'assurer que la section projets n'a pas d'overflow qui coupe la pagination */
+    #projects {
+        overflow: visible !important;
+        padding-bottom: 80px !important; /* Plus d'espace en bas */
+    }
+    
     /* Suppression de la limite de hauteur fixe */
     .project-card {
         max-width: 100%;
@@ -475,23 +481,63 @@ html {
         display: none !important;
     }
     
-    /* Pagination plus visible sur mobile */
+    /* Pagination plus visible et mieux positionnée sur mobile */
     .swiper-pagination {
-        bottom: -20px !important;
-        margin-top: 20px !important;
+        bottom: -60px !important;
+        position: relative !important;
+        margin-top: 40px !important;
+        margin-bottom: 40px !important;
+        padding: 20px 0 !important;
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 25px;
+        backdrop-filter: blur(10px);
+        text-align: center;
+        /* S'assurer qu'elle est complètement visible */
+        min-height: 60px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Mode clair pour la pagination */
+    .light-mode .swiper-pagination {
+        background: rgba(255, 255, 255, 0.1);
     }
     
     .swiper-pagination-bullet {
-        width: 16px !important;
-        height: 16px !important;
-        margin: 0 6px !important;
+        background: rgba(48, 164, 108, 0.4) !important;
+        width: 18px !important;
+        height: 18px !important;
+        margin: 0 8px !important;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        opacity: 1 !important;
+    }
+    
+    .swiper-pagination-bullet-active {
+        background: var(--bs-success) !important;
+        transform: scale(1.2);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 0 15px rgba(48, 164, 108, 0.6);
+    }
+    
+    /* Animation de pulsation subtile pour attirer l'attention */
+    .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+        animation: bulletPulse 3s ease-in-out infinite;
+    }
+    
+    @keyframes bulletPulse {
+        0%, 90% { transform: scale(1); }
+        5% { transform: scale(1.1); }
+        10% { transform: scale(1); }
     }
     
     /* Override des hauteurs fixes pour mobile */
     .mySwiper {
         height: auto !important;
-        padding: 0 5px !important; /* Réduire le padding horizontal */
+        padding: 0 5px 60px 5px !important; /* Plus de padding en bas pour la pagination */
         margin: 0 !important;
+        overflow: visible !important; /* Permet à la pagination d'être visible */
     }
     
     .swiper-slide {
@@ -994,5 +1040,306 @@ div.swiper.mySwiper .swiper-button-prev:hover {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* ===== INDICATEURS DE GLISSEMENT MOBILE ===== */
+
+/* Conteneur principal pour les indicateurs de swipe */
+.swipe-indicators-container {
+    position: relative;
+    width: 100%;
+    pointer-events: none; /* N'interfère pas avec le swipe */
+}
+
+/* Indicateurs de glissement gauche et droite */
+.swipe-indicator {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.8s ease-in-out;
+    animation: swipeHint 3s ease-in-out infinite;
+    font-size: 1.5rem;
+    color: var(--bs-success);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    filter: drop-shadow(0 0 8px rgba(48, 164, 108, 0.8));
+}
+
+/* Indicateur gauche */
+.swipe-indicator.left {
+    left: 15px;
+    animation-delay: 0s;
+}
+
+/* Indicateur droit */
+.swipe-indicator.right {
+    right: 15px;
+    animation-delay: 1.5s;
+}
+
+/* Animation de pulsation et mouvement */
+@keyframes swipeHint {
+    0%, 20% {
+        opacity: 0;
+        transform: translateY(-50%) translateX(0);
+    }
+    30%, 70% {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0);
+    }
+    40% {
+        transform: translateY(-50%) translateX(-8px);
+    }
+    60% {
+        transform: translateY(-50%) translateX(8px);
+    }
+    80%, 100% {
+        opacity: 0;
+        transform: translateY(-50%) translateX(0);
+    }
+}
+
+/* Animation inversée pour l'indicateur droit */
+.swipe-indicator.right {
+    animation-name: swipeHintRight;
+}
+
+@keyframes swipeHintRight {
+    0%, 20% {
+        opacity: 0;
+        transform: translateY(-50%) translateX(0);
+    }
+    30%, 70% {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0);
+    }
+    40% {
+        transform: translateY(-50%) translateX(8px);
+    }
+    60% {
+        transform: translateY(-50%) translateX(-8px);
+    }
+    80%, 100% {
+        opacity: 0;
+        transform: translateY(-50%) translateX(0);
+    }
+}
+
+/* Indicateur de swipe uniquement sur mobile */
+@media (max-width: 768px) {
+    .swipe-indicator {
+        display: block;
+        opacity: 1;
+    }
+    
+    /* Ajuster la position pour éviter les conflicts avec le contenu */
+    .swipe-indicator.left {
+        left: 10px;
+        z-index: 15;
+    }
+    
+    .swipe-indicator.right {
+        right: 10px;
+        z-index: 15;
+    }
+    
+    /* Animation plus subtile sur petits écrans */
+    .swipe-indicator {
+        font-size: 1.3rem;
+        animation-duration: 4s;
+    }
+}
+
+/* Cache les indicateurs sur desktop */
+@media (min-width: 769px) {
+    .swipe-indicator {
+        display: none !important;
+    }
+}
+
+/* ===== MESSAGE DE GUIDANCE SWIPE ===== */
+
+/* Message d'aide pour le swipe - apparaît au début */
+.swipe-help-message {
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    text-align: center;
+    z-index: 20;
+    opacity: 0;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(48, 164, 108, 0.3);
+    transition: all 0.5s ease;
+    pointer-events: none;
+}
+
+/* Mode clair pour le message */
+.light-mode .swipe-help-message {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--second-bg-color);
+    border: 1px solid rgba(48, 164, 108, 0.4);
+}
+
+/* Animation d'apparition du message */
+.swipe-help-message.show {
+    opacity: 1;
+    animation: helpMessageSlideUp 0.5s ease-out;
+}
+
+@keyframes helpMessageSlideUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Animation de disparition */
+.swipe-help-message.hide {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+}
+
+/* Affichage conditionnel sur mobile */
+@media (max-width: 768px) {
+    .swipe-help-message {
+        display: block;
+    }
+    
+    /* Ajuster position pour s'adapter à la pagination et éviter les chevauchements */
+    .mySwiper .swipe-help-message {
+        bottom: -100px;
+    }
+}
+
+/* Cache le message sur desktop */
+@media (min-width: 769px) {
+    .swipe-help-message {
+        display: none !important;
+    }
+}
+
+/* ===== INDICATEUR DE PROGRESSION ===== */
+
+/* Barre de progression pour indiquer la position dans le slider */
+.swipe-progress-container {
+    position: absolute;
+    bottom: -65px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 300px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    z-index: 15;
+}
+
+.swipe-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--bs-success), #3db572);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(48, 164, 108, 0.5);
+}
+
+/* Mode clair */
+.light-mode .swipe-progress-container {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Affichage sur mobile uniquement */
+@media (max-width: 768px) {
+    .swipe-progress-container {
+        display: block;
+    }
+    
+    /* Ajuster position pour éviter les chevauchements avec pagination */
+    .mySwiper .swipe-progress-container {
+        bottom: -85px;
+    }
+}
+
+@media (min-width: 769px) {
+    .swipe-progress-container {
+        display: none !important;
+    }
+}
+
+/* ===== AMÉLIORATION DE LA PAGINATION MOBILE ===== */
+
+/* La pagination mobile est déjà gérée dans la section responsive principale ci-dessus */
+
+@keyframes bulletPulse {
+    0%, 90% { transform: scale(1); }
+    5% { transform: scale(1.1); }
+    10% { transform: scale(1); }
+}
+
+/* ===== EFFET DE FADE SUR LES BORDS POUR INDIQUER LE SWIPE ===== */
+
+/* Effet de dégradé sur les bords pour suggérer le contenu caché */
+.mySwiper::before,
+.mySwiper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 80px; /* Laisser place à la pagination */
+    width: 30px;
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mySwiper::before {
+    left: 0;
+    background: linear-gradient(90deg, 
+        rgba(0, 0, 0, 0.1) 0%, 
+        transparent 100%
+    );
+}
+
+.mySwiper::after {
+    right: 0;
+    background: linear-gradient(270deg, 
+        rgba(0, 0, 0, 0.1) 0%, 
+        transparent 100%
+    );
+}
+
+/* Mode clair */
+.light-mode .mySwiper::before {
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.3) 0%, 
+        transparent 100%
+    );
+}
+
+.light-mode .mySwiper::after {
+    background: linear-gradient(270deg, 
+        rgba(255, 255, 255, 0.3) 0%, 
+        transparent 100%
+    );
+}
+
+/* Affichage conditionnel des dégradés */
+@media (max-width: 768px) {
+    .mySwiper.has-prev::before,
+    .mySwiper.has-next::after {
+        opacity: 0.6;
     }
 }
