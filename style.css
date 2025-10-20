@@ -947,6 +947,12 @@ footer {
 /* Espacement standard entre sections */
 section {
   padding-bottom: 5rem !important;
+  scroll-margin-top: 100px; /* Offset pour compenser la navbar fixe */
+}
+
+/* Offset spécifique pour les éléments de navigation */
+#about, #contact {
+  scroll-margin-top: 80px;
 }
 
 /* Titres de sections uniformes */

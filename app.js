@@ -522,6 +522,53 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// ===== GESTION UX NAVBAR MOBILE =====
+document.addEventListener('DOMContentLoaded', function() {
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  const navbarCollapse = document.querySelector('.navbar-collapse');
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  
+  // Fonction pour fermer la navbar
+  function closeNavbar() {
+    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+      // Utiliser Bootstrap pour fermer proprement
+      const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+        toggle: false
+      });
+      bsCollapse.hide();
+    }
+  }
+  
+  // 1. Fermer la navbar quand on clique sur un lien de navigation
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      // Petit délai pour laisser le temps au scroll de se déclencher
+      setTimeout(() => {
+        closeNavbar();
+      }, 100);
+    });
+  });
+  
+  // 2. Fermer la navbar quand on clique en dehors
+  document.addEventListener('click', function(e) {
+    const navbar = document.querySelector('.navbar');
+    const isClickInsideNavbar = navbar.contains(e.target);
+    const isNavbarOpen = navbarCollapse && navbarCollapse.classList.contains('show');
+    
+    // Si on clique en dehors de la navbar et qu'elle est ouverte
+    if (!isClickInsideNavbar && isNavbarOpen) {
+      closeNavbar();
+    }
+  });
+  
+  // 3. Fermer la navbar avec la touche Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeNavbar();
+    }
+  });
+});
+
 // ===== GESTION SCROLLBAR ELEGANTE PROJECTS =====
 
 document.addEventListener('DOMContentLoaded', function() {
