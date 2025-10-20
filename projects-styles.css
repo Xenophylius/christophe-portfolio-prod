@@ -347,7 +347,7 @@ html {
     /* S'assurer que la section projets n'a pas d'overflow qui coupe la pagination */
     #projects {
         overflow: visible !important;
-        padding-bottom: 80px !important; /* Plus d'espace en bas */
+        padding-bottom: 0 !important; /* Plus d'espace en bas */
     }
     
     /* Suppression de la limite de hauteur fixe */
@@ -1060,8 +1060,7 @@ div.swiper.mySwiper .swiper-button-prev:hover {
     z-index: 10;
     pointer-events: none;
     opacity: 0;
-    transition: all 0.8s ease-in-out;
-    animation: swipeHint 3s ease-in-out infinite;
+    transition: all 0.3s ease-in-out;
     font-size: 1.5rem;
     color: var(--bs-success);
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
@@ -1071,19 +1070,17 @@ div.swiper.mySwiper .swiper-button-prev:hover {
 /* Indicateur gauche */
 .swipe-indicator.left {
     left: 15px;
-    animation-delay: 0s;
 }
 
 /* Indicateur droit */
 .swipe-indicator.right {
     right: 15px;
-    animation-delay: 1.5s;
 }
 
-/* Animation de pulsation et mouvement */
+/* Animation de pulsation et mouvement pour indicateur gauche */
 @keyframes swipeHint {
     0%, 20% {
-        opacity: 0;
+        opacity: 0.3;
         transform: translateY(-50%) translateX(0);
     }
     30%, 70% {
@@ -1097,19 +1094,15 @@ div.swiper.mySwiper .swiper-button-prev:hover {
         transform: translateY(-50%) translateX(8px);
     }
     80%, 100% {
-        opacity: 0;
+        opacity: 0.3;
         transform: translateY(-50%) translateX(0);
     }
 }
 
-/* Animation inversée pour l'indicateur droit */
-.swipe-indicator.right {
-    animation-name: swipeHintRight;
-}
-
+/* Animation pour l'indicateur droit */
 @keyframes swipeHintRight {
     0%, 20% {
-        opacity: 0;
+        opacity: 0.3;
         transform: translateY(-50%) translateX(0);
     }
     30%, 70% {
@@ -1123,7 +1116,7 @@ div.swiper.mySwiper .swiper-button-prev:hover {
         transform: translateY(-50%) translateX(-8px);
     }
     80%, 100% {
-        opacity: 0;
+        opacity: 0.3;
         transform: translateY(-50%) translateX(0);
     }
 }
@@ -1132,7 +1125,7 @@ div.swiper.mySwiper .swiper-button-prev:hover {
 @media (max-width: 768px) {
     .swipe-indicator {
         display: block;
-        opacity: 1;
+        /* L'opacité sera gérée par JavaScript selon le contexte */
     }
     
     /* Ajuster la position pour éviter les conflicts avec le contenu */
@@ -1149,7 +1142,6 @@ div.swiper.mySwiper .swiper-button-prev:hover {
     /* Animation plus subtile sur petits écrans */
     .swipe-indicator {
         font-size: 1.3rem;
-        animation-duration: 4s;
     }
 }
 
@@ -1220,7 +1212,7 @@ div.swiper.mySwiper .swiper-button-prev:hover {
     
     /* Ajuster position pour s'adapter à la pagination et éviter les chevauchements */
     .mySwiper .swipe-help-message {
-        bottom: -100px;
+        bottom: 0;
     }
 }
 

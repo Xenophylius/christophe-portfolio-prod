@@ -231,10 +231,48 @@ document.addEventListener('DOMContentLoaded', function() {
     const swiper = document.querySelector('.mySwiper').swiper;
     const helpMessage = document.getElementById('swipeHelpMessage');
     const progressBar = document.getElementById('swipeProgressBar');
+    const leftIndicator = document.querySelector('.swipe-indicator.left');
+    const rightIndicator = document.querySelector('.swipe-indicator.right');
     
     // Variables pour l'état
     let hasUserInteracted = false;
     let helpTimeout;
+    
+    // Fonction pour mettre à jour les indicateurs selon la position
+    function updateSwipeIndicators() {
+      if (!leftIndicator || !rightIndicator || !swiper) return;
+      
+      const currentIndex = swiper.activeIndex;
+      const totalSlides = swiper.slides.length;
+      
+      // Supprimer toutes les animations existantes
+      leftIndicator.style.animation = 'none';
+      rightIndicator.style.animation = 'none';
+      
+      // Forcer un reflow pour réinitialiser les animations
+      leftIndicator.offsetHeight;
+      rightIndicator.offsetHeight;
+      
+      if (currentIndex === 0) {
+        // Premier slide : seule la flèche droite clignote
+        leftIndicator.style.opacity = '0.3';
+        rightIndicator.style.opacity = '1';
+        rightIndicator.style.animation = 'swipeHintRight 2s ease-in-out infinite';
+        
+      } else if (currentIndex === totalSlides - 1) {
+        // Dernier slide : seule la flèche gauche clignote
+        leftIndicator.style.opacity = '1';
+        rightIndicator.style.opacity = '0.3';
+        leftIndicator.style.animation = 'swipeHint 2s ease-in-out infinite';
+        
+      } else {
+        // Slides du milieu : les deux flèches clignotent
+        leftIndicator.style.opacity = '1';
+        rightIndicator.style.opacity = '1';
+        leftIndicator.style.animation = 'swipeHint 2s ease-in-out infinite';
+        rightIndicator.style.animation = 'swipeHintRight 2s ease-in-out infinite 1s'; // Décalage de 1s
+      }
+    }
     
     // Afficher le message d'aide au début
     setTimeout(() => {
@@ -249,6 +287,9 @@ document.addEventListener('DOMContentLoaded', function() {
           }, 500);
         }, 4000);
       }
+      
+      // Initialiser les indicateurs après l'affichage du message
+      updateSwipeIndicators();
     }, 1000);
     
     // Fonction pour mettre à jour la barre de progression
@@ -261,8 +302,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
     
-    // Fonction pour mettre à jour les classes CSS sur le container
-    function updateSwipeIndicators() {
+    // Fonction pour mettre à jour les classes CSS sur le container et les indicateurs contextuels
+    function updateContainerClasses() {
       const swiperContainer = document.querySelector('.mySwiper');
       if (swiperContainer && swiper) {
         // Ajouter/supprimer les classes pour les dégradés de bord
@@ -278,13 +319,16 @@ document.addEventListener('DOMContentLoaded', function() {
           swiperContainer.classList.remove('has-next');
         }
       }
+      
+      // Mettre à jour les indicateurs contextuels
+      updateSwipeIndicators();
     }
     
     // Écouter les changements de slide
     if (swiper) {
       swiper.on('slideChange', function() {
         updateProgressBar();
-        updateSwipeIndicators();
+        updateContainerClasses();
       });
       
       // Détecter l'interaction utilisateur
@@ -303,7 +347,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Initialiser les états
       updateProgressBar();
-      updateSwipeIndicators();
+      updateContainerClasses();
     }
     
     // Réinitialiser lors du redimensionnement si on passe en desktop

@@ -777,7 +777,7 @@
    
     <!-- Projects Section -->
 
-    <section class="container-fluid secondBackgroundColor py-5 px-0 mx-0" id="projects">
+    <section class="container-fluid secondBackgroundColor px-0 mx-0" id="projects">
         <!-- Titre de section Projects -->
         <div class="row justify-content-center">
             <div class="col-12 text-center">
@@ -1200,12 +1200,14 @@
                         </div>
                     </div>
                 </div>
+                
               </div>
               
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-pagination"></div>
+            
             
             <!-- Indicateurs de glissement mobile -->
             <div class="swipe-indicators-container d-md-none">
@@ -1223,16 +1225,10 @@
                 Glissez pour voir les autres projets
             </div>
             
-            <!-- Barre de progression -->
-            <div class="swipe-progress-container d-md-none">
-                <div class="swipe-progress-bar" id="swipeProgressBar"></div>
-            </div>
+            
             
           </div>
     </section>
-    
-    <!-- Espace pour la pagination du carousel et les indicateurs mobile -->
-    <div style="height: 150px;"></div>
     
     <!-- Contact Section -->
     <section class="container-fluid" id="contact">
