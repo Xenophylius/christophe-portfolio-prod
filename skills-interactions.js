@@ -9,7 +9,6 @@ function initializeSkillsTabs() {
         try {
             new bootstrap.Tab(document.querySelector('#frontend-tab'));
         } catch (e) {
-            console.log('Bootstrap tab already initialized');
         }
     }
 }
@@ -172,13 +171,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Gestionnaire des tabs - Correction pour Bootstrap
     const tabButtons = document.querySelectorAll('#skillTabs .nav-link');
     
-    console.log('Found tab buttons:', tabButtons.length);
     tabButtons.forEach((button, index) => {
-        console.log(`Button ${index}:`, button.id, button.getAttribute('data-bs-target'));
         
         // Événement au clic pour assurer le fonctionnement
         button.addEventListener('click', function(event) {
-            console.log('Tab button clicked:', this.id);
             // Supprimer la classe active de tous les boutons
             tabButtons.forEach(btn => btn.classList.remove('active'));
             
@@ -259,10 +255,12 @@ document.addEventListener('DOMContentLoaded', function() {
         setInterval(() => {
             if (!card.matches(':hover') && Math.random() < 0.1) {
                 const icon = card.querySelector('i');
-                icon.style.animation = 'pulse 0.6s ease-in-out';
-                setTimeout(() => {
-                    icon.style.animation = '';
-                }, 600);
+                if (icon) {
+                    icon.style.animation = 'pulse 0.6s ease-in-out';
+                    setTimeout(() => {
+                        icon.style.animation = '';
+                    }, 600);
+                }
             }
         }, 3000);
     });
@@ -296,7 +294,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 firstButton.setAttribute('aria-selected', 'true');
                 firstPane.classList.add('active', 'show');
                 
-                console.log('Activated default tab:', firstButton.id, firstPane.id);
             }
         }
     }

@@ -52,6 +52,123 @@ h1, h2, h3, h4, h5, h6, .helloWorld {
     -webkit-backdrop-filter: blur(10px)!important;
 }
 
+/* Custom navbar breakpoint at 1364px */
+.navbar-expand-custom {
+    overflow-x: hidden; /* Évite la scrollbar horizontale causée par les effets hover */
+}
+
+.navbar-expand-custom .navbar-toggler {
+    display: block;
+}
+
+.navbar-expand-custom .navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.navbar-expand-custom .navbar-nav {
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.navbar-expand-custom .navbar-nav .nav-link {
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+/* Style pour la section des réseaux sociaux */
+.navbar-brand-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar-brand-section .navbar-brand {
+    margin-right: 0.25rem;
+    padding: 0.25rem;
+}
+
+/* Séparateur dans la navbar */
+.navbar-separator {
+    width: 1px;
+    height: 30px;
+    background-color: var(--border-separator-color);
+    margin: 0 0.75rem;
+}
+
+/* Section mode toggle */
+.mode-toggle-section {
+    display: flex;
+    align-items: center;
+    margin-left: 0.5rem;
+}
+
+.mode-toggle-section i {
+    padding: 0.25rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+/* Bouton CV dans la navbar brand section */
+.navbar-brand-section .btn {
+    margin: 0 0.5rem;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+@media (min-width: 1365px) {
+    .navbar-expand-custom {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+
+    .navbar-expand-custom .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-expand-custom .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+
+    .navbar-expand-custom .navbar-nav {
+        flex-direction: row;
+        margin-left: auto;
+    }
+
+    .navbar-expand-custom .navbar-nav .nav-link {
+        padding: 0.5rem 0.75rem;
+        text-align: inherit;
+    }
+
+    .navbar-expand-custom .navbar-nav .nav-item {
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+    }
+}
+
+/* Styles responsive pour la navbar brand section */
+@media (max-width: 1364px) {
+    .navbar-brand-section {
+        flex-wrap: wrap;
+        gap: 0.25rem;
+    }
+    
+    .navbar-separator {
+        height: 20px;
+        margin: 0 0.5rem;
+    }
+    
+    .navbar-brand-section .btn {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+}
+
 .textColor {
     color: var(--second-bg-color);
 }
@@ -548,7 +665,8 @@ body.light-mode .navbar .fa-moon {
 }
 
 .navbar-toggler:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
 }
 
 .navbar-toggler:focus {
@@ -1047,6 +1165,52 @@ section {
   border-radius: 0 0 20px 20px;
 }
 
+/* Fallback mobile pour PDF */
+.mobile-pdf-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  padding: 3rem 2rem;
+}
+
+.mobile-pdf-message {
+  text-align: center;
+  color: var(--second-bg-color);
+}
+
+.mobile-pdf-message i {
+  color: var(--title-color);
+  opacity: 0.7;
+}
+
+.mobile-pdf-message h5 {
+  color: var(--second-bg-color);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.mobile-pdf-message p {
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.mobile-pdf-message .btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Mode clair pour le fallback mobile */
+.light-mode .mobile-pdf-message {
+  color: #000000;
+}
+
+.light-mode .mobile-pdf-message h5 {
+  color: #000000;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .modern-modal .modal-dialog {
@@ -1514,5 +1678,772 @@ section {
     margin: 0 !important;
     width: 100% !important;
   }
+}
+
+/* ===== FORMULAIRE DE CONTACT MODERNE ===== */
+
+/* Section contact */
+#contact {
+    position: relative;
+    padding: 0px 0 80px 0;
+    overflow: hidden;
+    z-index: 1;
+    clear: both;
+    margin-top: 50px;
+    display: block;
+}
+
+#contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(48, 164, 108, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.contact-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Informations de contact */
+.contact-info {
+    padding: 2rem;
+}
+
+.contact-info-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    position: relative;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.contact-info-item:nth-child(2) { animation-delay: 0.2s; }
+.contact-info-item:nth-child(3) { animation-delay: 0.4s; }
+.contact-info-item:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.contact-icon-wrapper {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--bs-success), #2a8f5a);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.contact-icon-wrapper:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(48, 164, 108, 0.3);
+}
+
+.contact-icon-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.contact-icon-wrapper:hover::before {
+    left: 100%;
+}
+
+.contact-icon {
+    color: white;
+    font-size: 1.2rem;
+    z-index: 1;
+}
+
+.contact-text h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.contact-text p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Social links */
+.contact-social {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.social-link.linkedin {
+    background: linear-gradient(135deg, #0077b5, #005885);
+    color: white;
+}
+
+.social-link.github {
+    background: linear-gradient(135deg, #333, #1a1a1a);
+    color: white;
+}
+
+.social-link.email {
+    background: linear-gradient(135deg, var(--bs-success), #2a8f5a);
+    color: white;
+}
+
+.social-link:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.social-link i {
+    font-size: 1.1rem;
+    z-index: 1;
+}
+
+/* Container du formulaire */
+.contact-form-container {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2.5rem;
+    position: relative;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes formSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--bs-success), transparent);
+    animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* Groupes de champs modernes */
+.form-group-modern {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+/* Champs de saisie modernes */
+.form-control-modern {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: var(--second-bg-color);
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+    font-family: inherit;
+}
+
+.form-control-modern:focus,
+.form-control-modern:valid {
+    border-color: var(--bs-success);
+    background: rgba(48, 164, 108, 0.05);
+    box-shadow: 0 0 0 3px rgba(48, 164, 108, 0.1);
+    transform: translateY(-2px);
+}
+
+.form-control-modern:focus + .form-label-modern,
+.form-control-modern:valid + .form-label-modern {
+    transform: translateY(-130%) scale(0.85);
+    color: var(--bs-success);
+}
+
+.form-control-modern:focus + .form-label-modern .label-icon,
+.form-control-modern:valid + .form-label-modern .label-icon {
+    color: var(--bs-success);
+    transform: scale(1.1);
+}
+
+/* Textarea spécifique */
+.textarea-modern {
+    resize: vertical;
+    min-height: 120px;
+    padding-top: 2.2rem;
+    line-height: 1.5;
+}
+
+.textarea-modern::placeholder {
+    color: rgba(178, 179, 189, 0.6);
+    font-style: italic;
+    line-height: 2.2;
+    padding-top: 0.5rem;
+    display: block;
+}
+
+/* Labels modernes */
+.form-label-modern {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(178, 179, 189, 0.7);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    padding: 0 0.5rem;
+    z-index: 1;
+}
+
+.textarea-label {
+    top: 1.8rem;
+    transform: translateY(0);
+}
+
+.form-control-modern:focus + .textarea-label,
+.form-control-modern:valid + .textarea-label {
+    transform: translateY(-20%) scale(0.85);
+    top: 0.2rem;
+}
+
+.label-icon {
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.label-text {
+    transition: all 0.3s ease;
+}
+
+/* Bordure animée */
+.input-border {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--bs-success), #2a8f5a);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.form-control-modern:focus ~ .input-border {
+    width: 100%;
+}
+
+/* Select personnalisé */
+select.form-control-modern {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2330A46C' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-repeat: no-repeat !important;
+    background-position: right 1rem center !important;
+    background-size: 1rem 1rem !important;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Icône de flèche pour le mode clair - utilisation d'un pseudo-élément au lieu du SVG */
+.light-mode select.form-control-modern {
+    background-image: none !important;
+    position: relative;
+}
+
+.light-mode select.form-control-modern::after {
+    content: '';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid var(--bs-success);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Solution de fallback avec des bordures CSS si le SVG pose problème */
+select.form-control-modern.fallback-arrow {
+    background-image: none;
+    position: relative;
+}
+
+select.form-control-modern.fallback-arrow::after {
+    content: '';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid var(--bs-success);
+    pointer-events: none;
+}
+
+/* Mode sombre (par défaut) */
+select.form-control-modern option {
+    background: rgba(48, 164, 108, 0.08);
+    color: var(--second-bg-color);
+    padding: 0.5rem;
+    border: 1px solid rgba(48, 164, 108, 0.2);
+}
+
+select.form-control-modern {
+    color: var(--second-bg-color);
+}
+
+/* Mode clair */
+.light-mode select.form-control-modern {
+    color: var(--second-bg-color);
+}
+
+.light-mode select.form-control-modern option {
+    background: rgba(48, 164, 108, 0.05);
+    color: var(--second-bg-color);
+    border: 1px solid rgba(48, 164, 108, 0.15);
+}
+
+/* Styles pour le dropdown dans les différents navigateurs */
+select.form-control-modern optgroup {
+    background: rgba(48, 164, 108, 0.08);
+    color: var(--second-bg-color);
+}
+
+.light-mode select.form-control-modern optgroup {
+    background: rgba(48, 164, 108, 0.05);
+    color: var(--second-bg-color);
+}
+
+/* Pour une meilleure compatibilité navigateur */
+select.form-control-modern::-ms-expand {
+    display: none;
+}
+
+select.form-control-modern option:hover {
+    background: rgba(48, 164, 108, 0.15) !important;
+    color: white !important;
+}
+
+.light-mode select.form-control-modern option:hover {
+    background: rgba(48, 164, 108, 0.12) !important;
+    color: var(--second-bg-color) !important;
+}
+
+/* Style pour l'option sélectionnée */
+select.form-control-modern option:checked {
+    background: rgba(48, 164, 108, 0.2);
+    color: white;
+}
+
+.light-mode select.form-control-modern option:checked {
+    background: rgba(48, 164, 108, 0.15);
+    color: var(--second-bg-color);
+}
+
+/* Bouton d'envoi moderne */
+.btn-send-modern {
+    background: linear-gradient(135deg, var(--bs-success) 0%, #2a8f5a 100%);
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2.5rem;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    min-width: 200px;
+    box-shadow: 0 8px 25px rgba(48, 164, 108, 0.3);
+    text-transform: none;
+    letter-spacing: 0.5px;
+}
+
+.btn-send-modern:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(48, 164, 108, 0.4);
+    background: linear-gradient(135deg, #3db572 0%, var(--bs-success) 100%);
+}
+
+.btn-send-modern:active {
+    transform: translateY(-1px);
+}
+
+.btn-send-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-send-modern:hover::before {
+    left: 100%;
+}
+
+/* États du bouton */
+.btn-send-modern.loading {
+    pointer-events: none;
+    background: linear-gradient(135deg, #666, #888);
+}
+
+.btn-send-modern.success {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    animation: successPulse 0.6s ease;
+}
+
+@keyframes successPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Animation de chargement */
+.btn-loading .fa-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Icône de succès */
+.btn-success-check {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(40, 167, 69, 0.2);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-success-check i {
+    color: #28a745;
+    font-size: 1.2rem;
+    animation: checkmark 0.6s ease;
+}
+
+@keyframes checkmark {
+    0% { transform: scale(0) rotate(45deg); }
+    50% { transform: scale(1.2) rotate(45deg); }
+    100% { transform: scale(1) rotate(45deg); }
+}
+
+/* Mode clair */
+.light-mode .contact-form-container {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .form-control-modern {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: var(--second-bg-color);
+}
+
+.light-mode .form-control-modern:focus,
+.light-mode .form-control-modern:valid {
+    background: rgba(48, 164, 108, 0.05);
+    border-color: var(--bs-success);
+}
+
+.light-mode .contact-icon-wrapper:hover {
+    box-shadow: 0 8px 25px rgba(48, 164, 108, 0.2);
+}
+
+.light-mode .social-link:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-form-container {
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .contact-info {
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    .contact-info-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+        /* Style card moderne pour mobile */
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .contact-info-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        background: rgba(255, 255, 255, 0.15);
+    }
+    
+    /* Adaptation pour le thème sombre sur mobile */
+    .dark-theme .contact-info-item {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    .dark-theme .contact-info-item:hover {
+        background: rgba(0, 0, 0, 0.4);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+    
+    .contact-icon-wrapper {
+        align-self: center;
+    }
+    
+    .btn-send-modern {
+        width: 100%;
+        padding: 1.2rem 2rem;
+    }
+    
+    .form-control-modern {
+        padding: 1rem;
+        font-size: 16px; /* Évite le zoom sur iOS */
+    }
+    
+    .textarea-modern {
+        min-height: 100px;
+    }
+}
+
+@media (max-width: 576px) {
+    #contact {
+        padding: 60px 0 50px 0;
+    }
+    
+    .contact-subtitle {
+        font-size: 1rem;
+    }
+    
+    .contact-info-title {
+        font-size: 1.3rem;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        padding: 1.2rem;
+        margin-bottom: 2rem !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .dark-theme .contact-info-title {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .social-link {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .social-link i {
+        font-size: 1rem;
+    }
+    
+    /* Card pour les réseaux sociaux sur mobile */
+    .contact-social {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin-top: 2rem !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .dark-theme .contact-social {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Styles pour la section spécialités CRM */
+.crm-specialties-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.crm-specialty-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.crm-specialty-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(48, 164, 108, 0.2);
+}
+
+.crm-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, rgba(48, 164, 108, 0.2), rgba(48, 164, 108, 0.1));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.crm-specialty-card:hover .crm-icon-wrapper {
+    background: linear-gradient(135deg, var(--bs-success), #2a8f5a);
+    transform: scale(1.1);
+}
+
+.crm-specialty-card:hover .crm-icon-wrapper i {
+    color: white !important;
+}
+
+/* Assurer que les icônes deviennent blanches au hover, même avec les classes Bootstrap */
+.crm-specialty-card:hover .crm-icon-wrapper .fa-users-gear,
+.crm-specialty-card:hover .crm-icon-wrapper .fa-tachometer-alt,
+.crm-specialty-card:hover .crm-icon-wrapper .fa-cogs,
+.crm-specialty-card:hover .crm-icon-wrapper .fa-gauge,
+.crm-specialty-card:hover .crm-icon-wrapper .fa-gears {
+    color: white !important;
+}
+
+/* Règle générale pour toutes les icônes Font Awesome dans les cards CRM */
+.crm-specialty-card:hover .crm-icon-wrapper i[class*="fa-"] {
+    color: white !important;
+}
+
+.crm-value-proposition {
+    background: rgba(48, 164, 108, 0.1);
+    border-left: 3px solid var(--bs-success);
+}
+
+.dark-theme .crm-specialties-container {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .crm-specialty-card {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .crm-specialty-card:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* S'assurer que les icônes restent blanches au hover dans tous les thèmes */
+.crm-specialty-card:hover .crm-icon-wrapper i.fa-solid {
+    color: white !important;
+}
+
+.dark-theme .crm-specialty-card:hover .crm-icon-wrapper i {
+    color: white !important;
+}
+
+/* Règles ultra-spécifiques pour contourner Bootstrap */
+.crm-specialty-card:hover .crm-icon-wrapper i.text-success,
+.crm-specialty-card:hover .crm-icon-wrapper i.fa-solid.text-success {
+    color: white !important;
+}
+
+/* Section contact - styles de base */
+#contact {
+    opacity: 1;
+    position: static;
+    display: block;
 }
 

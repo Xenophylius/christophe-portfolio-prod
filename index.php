@@ -12,11 +12,11 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Christophe Delahaye - Développeur web fullstack passionné. 10+ ans d'expérience, spécialisé Symfony, Vue.js, WordPress. Solutions modernes et performantes centrées utilisateur.">
+    <meta name="description" content="Christophe Delahaye - Développeur spécialisé applications CRM et outils métier. Solutions sur-mesure pour optimiser la productivité des entreprises. Symfony, Vue.js, interfaces d'administration.">
     <title>Christophe Delahaye - Développeur Web Fullstack (Symfony / Vue.js)</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="keywords" content="développeur web, fullstack, Symfony, Vue.js, PHP, WordPress, PrestaShop, React, Node.js, développeur freelance, portfolio, Christophe Delahaye">
+    <meta name="keywords" content="développeur CRM, applications métier, outils gestion entreprise, Symfony, Vue.js, interface administration, back-office, automatisation, développeur freelance, Christophe Delahaye">
     <meta name="author" content="Christophe Delahaye">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
@@ -24,7 +24,7 @@
     
     <!-- Open Graph Meta Tags pour les réseaux sociaux -->
     <meta property="og:title" content="Christophe Delahaye - Développeur Web Fullstack (Symfony / Vue.js)">
-    <meta property="og:description" content="Développeur web fullstack passionné. 10+ ans d'expérience, spécialisé Symfony, Vue.js, WordPress. Solutions modernes et performantes centrées utilisateur.">
+    <meta property="og:description" content="Développeur spécialisé applications CRM et outils métier. Solutions sur-mesure pour optimiser la productivité des entreprises et simplifier le quotidien des équipes.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://christophe.projets.p8.garage404.com/">
     <meta property="og:image" content="https://christophe.projets.p8.garage404.com/images/pictureProfil2.png">
@@ -43,7 +43,7 @@
       "@type": "Person",
       "name": "Christophe Delahaye",
       "jobTitle": "Développeur Web Fullstack",
-      "description": "Développeur web fullstack passionné par la création d'applications modernes et performantes",
+      "description": "Développeur spécialisé dans les applications CRM et outils métier pour optimiser la productivité des entreprises",
       "url": "https://christophe.projets.p8.garage404.com/",
       "image": "https://christophe.projets.p8.garage404.com/images/pictureProfil2.png",
       "knowsAbout": ["PHP", "Symfony", "Vue.js", "JavaScript", "WordPress", "PrestaShop", "React", "Node.js", "HTML5", "CSS3", "Bootstrap", "Tailwind CSS"],
@@ -57,10 +57,12 @@
       }
     }
     </script>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!-- Toastr CSS désactivé - utilisation du CSS personnalisé dans style.css -->
+    <!-- Toastr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="skills-animations.css">
     <link rel="stylesheet" href="projects-styles.css">
@@ -82,41 +84,47 @@
     
     <!-- Navbar Section -->
     <a href="#heroSection" aria-label="Lien vers la hero section de Christophe Delahaye"><i class="fa-solid fa-circle-up fa-2x me-2 z-3 position-fixed bottom-0 end-0 mb-2 hoverScale" id="scrollButton" style="color: #30a46c;"></i></a>
-    <nav class="navbar navbar-expand-lg fixed-top blurDiv" >
-        <div class="container-fluid row text-center">
-        <div class="col-6">
-          <a class="navbar-brand" href="https://www.linkedin.com/in/christophe-delahaye-b61446186/" aria-label="Lien vers la page Linkedin de Christophe Delahaye" target="_blank"><i class="fa-brands fa-linkedin fa-xl hoverScale2 iconBgColor"></i></a>
-          <a class="navbar-brand" href="https://github.com/Xenophylius" aria-label="Lien vers la page GitHub de Christophe Delahaye" target="_blank"><i class="fa-brands fa-github fa-xl hoverScale2 iconBgColor"></i></a>
-          <a class="navbar-brand" href="https://discord.com/users/274269260878970882" aria-label="Lien vers la page Discord de Christophe Delahaye" target="_blank"><i class="fa-brands fa-discord fa-xl hoverScale2 iconBgColor"></i></a>
+    <nav class="navbar navbar-expand-custom fixed-top blurDiv" >
+        <div class="container-fluid">
+            <!-- Social links section -->
+            <div class="navbar-brand-section">
+                <a class="navbar-brand" href="https://www.linkedin.com/in/christophe-delahaye-b61446186/" aria-label="Lien vers la page Linkedin de Christophe Delahaye" target="_blank"><i class="fa-brands fa-linkedin fa-xl hoverScale2 iconBgColor"></i></a>
+                <a class="navbar-brand" href="https://github.com/Xenophylius" aria-label="Lien vers la page GitHub de Christophe Delahaye" target="_blank"><i class="fa-brands fa-github fa-xl hoverScale2 iconBgColor"></i></a>
+                <a class="navbar-brand" href="https://discord.com/users/274269260878970882" aria-label="Lien vers la page Discord de Christophe Delahaye" target="_blank"><i class="fa-brands fa-discord fa-xl hoverScale2 iconBgColor"></i></a>
+                
+                <!-- Séparateur -->
+                <div class="navbar-separator"></div>
+                
+                <!-- Bouton CV -->
+                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success btn-sm fw-bold btn-change6 hoverScale">CV</button>
+                
+                <!-- Mode clair/sombre -->
+                <div class="mode-toggle-section">
+                    <i class="fa-regular fa-lightbulb fa-lg hoverScale iconBgColor" id="lightMod" style="cursor: pointer;"></i>
+                    <i class="fa-solid fa-moon fa-lg hoverScale iconBgColor d-none" id="darkMod" style="cursor: pointer;"></i>
+                </div>
+            </div>
+            
+            <!-- Burger button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon navbar-dark" id="navToggle"></span>
+            </button>
         
-        </div>
-          <button class="navbar-toggler col-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon navbar-dark" id="navToggle"></span>
-          </button>
-        
-          <div class="collapse navbar-collapse col-6 justify-content-center align-items-center" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item hoverScale ">
-                <a class="nav-link textColor" aria-current="page" href="#about" id="nav0">À PROPOS</a>
-              </li>
-              <li class="nav-item hoverScale ">
-                <a class="nav-link textColor" href="#skills" id="nav1" >COMPÉTENCES</a>
-              </li>
-              <li class="nav-item hoverScale ">
-                <a class="nav-link textColor" href="#projects" id="nav2">MES RÉALISATIONS</a>
-              </li>
-              <li class="nav-item hoverScale ">
-                <a class="nav-link textColor" href="#contact">CONTACT</a>
-              </li>
-              <li class="nav-item hoverScale mx-2 ">
-                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success pt-2 fw-bold btn-change6">CV</button>
-              </li>
-              <li class="nav-item hoverScale" id="lightMod">
-                <i class="fa-regular fa-lightbulb fa-lg pt-2 mx-3"></i>
-              </li>
-              <li class="nav-item hoverScale d-none" id="darkMod">
-                <i class="fa-solid fa-moon fa-lg pt-2 mx-3"></i>
-              </li>
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item hoverScale">
+                        <a class="nav-link textColor" aria-current="page" href="#about" id="nav0">À PROPOS</a>
+                    </li>
+                    <li class="nav-item hoverScale">
+                        <a class="nav-link textColor" href="#skills" id="nav1">COMPÉTENCES</a>
+                    </li>
+                    <li class="nav-item hoverScale">
+                        <a class="nav-link textColor" href="#projects" id="nav2">MES RÉALISATIONS</a>
+                    </li>
+                    <li class="nav-item hoverScale">
+                        <a class="nav-link textColor" href="#contact">CONTACT</a>
+                    </li>
               <!-- Changement de langue temporairement masqué 
               <li class="nav-item hoverScale" id="frenchMod">
                 <img src="./images/france.png" alt="Drapeau de la France pour changer le langage" class="pt-2" id="langageFlag">
@@ -132,7 +140,7 @@
     
     <!-- MODAL Section -->
      
-    <div class="modal fade modern-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade modern-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
       <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content modern-modal-content">
           <div class="modal-header modern-modal-header">
@@ -141,7 +149,7 @@
               <h3 class="modal-title" id="exampleModalLabel">Curriculum Vitae</h3>
             </div>
             <div class="modal-actions">
-              <button type="button" class="btn btn-outline-secondary modern-btn-close" data-bs-dismiss="modal">
+              <button type="button" class="btn btn-outline-secondary modern-btn-close" data-bs-dismiss="modal" aria-label="Fermer la modal">
                 <i class="fa-solid fa-times me-2"></i>Fermer
               </button>
               <a type="button" class="btn btn-success modern-btn-download" href="images/Christophe_delahaye_CV.pdf" download="christophe-delahaye-CV.pdf">
@@ -151,7 +159,20 @@
           </div>
           <div class="modal-body modern-modal-body">
             <div class="pdf-container">
-              <embed src="images/Christophe_delahaye_CV.pdf#toolbar=0" width="100%" type="application/pdf" class="modern-pdf"/>
+              <!-- PDF pour desktop -->
+              <embed src="images/Christophe_delahaye_CV.pdf#toolbar=0" width="100%" type="application/pdf" class="modern-pdf d-none d-md-block"/>
+              
+              <!-- Fallback pour mobile -->
+              <div class="mobile-pdf-fallback d-block d-md-none">
+                <div class="mobile-pdf-message">
+                  <i class="fa-solid fa-mobile-screen-button fa-3x mb-3"></i>
+                  <h5>Visualisation PDF indisponible sur mobile</h5>
+                  <p class="text-muted">Utilisez le bouton de téléchargement pour consulter le CV</p>
+                  <a href="images/Christophe_delahaye_CV.pdf" target="_blank" class="btn btn-primary">
+                    <i class="fa-solid fa-external-link-alt me-2"></i>Ouvrir dans un nouvel onglet
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -181,7 +202,7 @@
             </div>
             
             <p class="hero-tagline">
-                Développeur passionné créant des <span class="hero-highlight">expériences digitales</span> innovantes
+                Développeur spécialisé dans les <span class="hero-highlight">applications CRM</span> et outils métier pour entreprises
             </p>
             
             <div class="hero-cta">
@@ -228,15 +249,86 @@
                         </h3>
                         <div class="textColor2 text-light">
                             <p class="mb-3" id="aboutDescription1">
-                                Développeur web fullstack, <strong class="titleColor">passionné par la création d'applications modernes et performantes</strong>. 
-                                Titulaire du diplôme RNCP 6 Concepteur Développeur d'Applications, j'aime concevoir des solutions 
-                                <em>centrées utilisateur</em> et des solutions <em>back-office</em> pour les entreprises.
+                                Développeur web fullstack, <strong class="titleColor">spécialisé dans les applications CRM et outils de gestion métier</strong>. 
+                                Titulaire du diplôme RNCP 6 Concepteur Développeur d'Applications, j'aide les entreprises à optimiser leurs processus 
+                                avec des <em>solutions CRM sur-mesure</em>, <em>tableaux de bord interactifs</em> et <em>interfaces d'administration intuitives</em>.
                             </p>
                             <p class="mb-0" id="aboutDescription2">
-                                Curieux, rigoureux et autonome, je maîtrise un large éventail de technologies 
-                                <span class="titleColor fw-semibold">(Symfony, Vue.js, Prestashop, WordPress)</span> 
-                                et développe des solutions <strong>performantes et innovantes</strong> adaptées aux besoins métier.
+                                Ma passion : créer des <strong>outils simples, rapides et efficaces</strong> qui simplifient le quotidien des équipes. 
+                                <span class="titleColor fw-semibold">Symfony, Vue.js, API Platform</span> me permettent de développer des 
+                                <strong>CRM personnalisés, systèmes de gestion avancés</strong> et interfaces d'administration qui transforment la productivité des entreprises.
                             </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Section spécialités CRM -->
+            <div class="row justify-content-center mt-5">
+                <div class="col-12 col-lg-10">
+                    <div class="crm-specialties-container interactiveComponentColor rounded-3 p-4">
+                        <div class="text-center mb-4">
+                            <h3 class="titleColor fw-bold mb-3">
+                                <i class="fa-solid fa-chart-line me-3 text-success"></i>
+                                Spécialiste Applications CRM & Outils Métier
+                            </h3>
+                            <p class="textColor2 fs-5">
+                                J'aide les entreprises à optimiser leurs processus avec des solutions sur-mesure
+                            </p>
+                        </div>
+                        
+                        <div class="row g-4">
+                            <div class="col-12 col-md-4">
+                                <div class="crm-specialty-card h-100 text-center p-3">
+                                    <div class="crm-icon-wrapper mb-3">
+                                        <i class="fa-solid fa-users-gear fa-2x text-success"></i>
+                                    </div>
+                                    <h5 class="titleColor fw-bold mb-2">CRM Personnalisés</h5>
+                                    <p class="textColor2 small mb-0">
+                                        Systèmes de gestion client sur-mesure avec workflows automatisés, 
+                                        tableaux de bord interactifs et reporting avancé
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 col-md-4">
+                                <div class="crm-specialty-card h-100 text-center p-3">
+                                    <div class="crm-icon-wrapper mb-3">
+                                        <i class="fa-solid fa-gauge fa-2x text-success"></i>
+                                    </div>
+                                    <h5 class="titleColor fw-bold mb-2">Interfaces d'Administration</h5>
+                                    <p class="textColor2 small mb-0">
+                                        Back-offices intuitifs et performants pour simplifier la gestion 
+                                        quotidienne des équipes et optimiser leur productivité
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 col-md-4">
+                                <div class="crm-specialty-card h-100 text-center p-3">
+                                    <div class="crm-icon-wrapper mb-3">
+                                        <i class="fa-solid fa-gears fa-2x text-success"></i>
+                                    </div>
+                                    <h5 class="titleColor fw-bold mb-2">Automatisation Métier</h5>
+                                    <p class="textColor2 small mb-0">
+                                        Workflows intelligents, intégrations API et outils d'automatisation 
+                                        pour fluidifier les processus d'entreprise
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <div class="crm-value-proposition p-3 rounded" style="background: rgba(48, 164, 108, 0.1); border-left: 3px solid var(--bs-success);">
+                                <p class="titleColor fw-semibold mb-2">
+                                    <i class="fa-solid fa-rocket me-2"></i>
+                                    Mon objectif : Des outils qui simplifient vraiment le travail de vos équipes
+                                </p>
+                                <p class="textColor2 mb-0 fst-italic">
+                                    "Chaque entreprise est unique. Je conçois des solutions CRM et outils de gestion 
+                                    qui s'adaptent parfaitement à vos processus métier spécifiques."
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -689,8 +781,11 @@
         <!-- Titre de section Projects -->
         <div class="row justify-content-center">
             <div class="col-12 text-center">
-                <h2 class="section-title" id="projectTitle">MES RÉALISATIONS</h2>
+                <h2 class="section-title" id="projectTitle">MES RÉALISATIONS CRM & OUTILS MÉTIER</h2>
                 <div class="section-separator"></div>
+                <p class="textColor2 mt-3 mb-4 fs-5">
+                    Découvrez des applications concrètes qui simplifient le quotidien des entreprises
+                </p>
             </div>
         </div>
          <!-- Swiper -->
@@ -777,85 +872,7 @@
                     </div>
                 </div>
               </div>
-              <div class="swiper-slide">
-                <div class="project-card rounded-4 overflow-hidden shadow-lg">
-                    <div class="row g-0">
-                        <!-- Image à gauche -->
-                        <div class="col-12 col-md-4">
-                            <div class="project-image-container">
-                                <img src="images/exchange.webp" loading="lazy" class="project-image" alt="Image de l'application Exchange Pocket - Échange de cartes Pokémon TCG">
-                            </div>
-                        </div>
-                        <!-- Contenu à droite -->
-                        <div class="col-12 col-md-8">
-                            <div class="project-content p-4">
-                                <div>
-                                    <h3 class="project-title titleColor fw-bold mb-3">EXCHANGE POCKET</h3>
-                                    
-                                    <!-- Technologies utilisées avec logos -->
-                                    <div class="project-technologies mb-3">
-                                        <div class="d-flex align-items-center flex-wrap gap-1">
-                                            <span class="tech-badge">
-                                                <i class="fa-brands fa-vuejs" style="color: #4fc08d;"></i>
-                                                <span>Vue.js 3</span>
-                                            </span>
-                                            <span class="tech-badge">
-                                                <i class="fa-solid fa-code" style="color: #000000;"></i>
-                                                <span>Symfony 7.1</span>
-                                            </span>
-                                            <span class="tech-badge">
-                                                <i class="fa-solid fa-wind" style="color: #06b6d4;"></i>
-                                                <span>Tailwind 4</span>
-                                            </span>
-                                            <span class="tech-badge">
-                                                <i class="fa-brands fa-php" style="color: #777bb4;"></i>
-                                                <span>PHP 8.3</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    
-                                    <p class="project-description textColor2 mb-3">
-                                        Application web complète d'<strong>échange de cartes Pokémon TCG Pocket</strong> entre joueurs. 
-                                        <strong>Architecture full-stack moderne</strong> avec Vue.js 3 côté front et Symfony 7.1 + API Platform côté back. 
-                                        Système de <strong>matching automatique</strong> entre offres et demandes d'échange.
-                                    </p>
-                                    
-                                    <p class="project-description textColor2 mb-3">
-                                        <strong>Performances optimisées :</strong> lazy loading, images WebP, Tailwind CSS sans ombres pour éviter les repaints. 
-                                        <strong>API RESTful sécurisée</strong> avec authentification JWT Bearer et architecture SOLID 
-                                        côté front avec composants Vue réutilisables.
-                                    </p>
-                                    
-                                    <div class="project-company-info mb-3 p-3 rounded" style="background: rgba(48, 164, 108, 0.1); border-left: 3px solid var(--bs-success);">
-                                        <h5 class="titleColor fw-bold mb-2">
-                                            <i class="fa-solid fa-exchange-alt me-2"></i>Plateforme d'Échange Gaming
-                                        </h5>
-                                        <p class="project-description textColor2 mb-2">
-                                            Plateforme permettant aux joueurs de <strong>publier des offres d'échange</strong>, consulter les propositions 
-                                            disponibles et <strong>valider automatiquement</strong> les transactions. UX fluide avec routing Vue Router, 
-                                            recherche dynamique et design system cohérent.
-                                        </p>
-                                        <p class="project-description textColor2 mb-0">
-                                            <strong>Architecture technique :</strong> Front séparé du back, API Platform pour les endpoints REST, 
-                                            gestion complexe des relations Doctrine, optimisations mobiles et sécurité production-ready.
-                                        </p>
-                                    </div>
-                                    
-                                    <p class="project-quote fst-italic textColor2 mb-3">
-                                        "Full-stack moderne : Vue.js 3, Symfony 7.1, optimisations performances et architecture SOLID."
-                                    </p>
-                                </div>
-                                
-                                <div class="project-actions d-flex align-items-center gap-3">
-                                    <a href="https://exchange-pocket.vercel.app/" class="btn btn-success btn-change6" target="_blank">
-                                        <i class="fa-solid fa-external-link-alt me-2"></i>Voir l'application
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              </div>
+              <!-- 2. Refonte e-commerce -->
               <div class="swiper-slide">
                 <div class="project-card rounded-4 overflow-hidden shadow-lg">
                     <div class="row g-0">
@@ -937,7 +954,7 @@
                     </div>
                 </div>
               </div>
-              
+              <!-- 3. Audisio -->
               <div class="swiper-slide">
                 <div class="project-card rounded-4 overflow-hidden shadow-lg">
                     <div class="row g-0">
@@ -1018,6 +1035,86 @@
                     </div>
                 </div>
               </div>
+              <!-- 4. Exchange Pocket -->
+              <div class="swiper-slide">
+                <div class="project-card rounded-4 overflow-hidden shadow-lg">
+                    <div class="row g-0">
+                        <!-- Image à gauche -->
+                        <div class="col-12 col-md-4">
+                            <div class="project-image-container">
+                                <img src="images/exchange.webp" loading="lazy" class="project-image" alt="Image de l'application Exchange Pocket - Échange de cartes Pokémon TCG">
+                            </div>
+                        </div>
+                        <!-- Contenu à droite -->
+                        <div class="col-12 col-md-8">
+                            <div class="project-content p-4">
+                                <div>
+                                    <h3 class="project-title titleColor fw-bold mb-3">EXCHANGE POCKET</h3>
+                                    
+                                    <!-- Technologies utilisées avec logos -->
+                                    <div class="project-technologies mb-3">
+                                        <div class="d-flex align-items-center flex-wrap gap-1">
+                                            <span class="tech-badge">
+                                                <i class="fa-brands fa-vuejs" style="color: #4fc08d;"></i>
+                                                <span>Vue.js 3</span>
+                                            </span>
+                                            <span class="tech-badge">
+                                                <i class="fa-solid fa-code" style="color: #000000;"></i>
+                                                <span>Symfony 7.1</span>
+                                            </span>
+                                            <span class="tech-badge">
+                                                <i class="fa-solid fa-wind" style="color: #06b6d4;"></i>
+                                                <span>Tailwind 4</span>
+                                            </span>
+                                            <span class="tech-badge">
+                                                <i class="fa-brands fa-php" style="color: #777bb4;"></i>
+                                                <span>PHP 8.3</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="project-description textColor2 mb-3">
+                                        Application web complète d'<strong>échange de cartes Pokémon TCG Pocket</strong> entre joueurs. 
+                                        <strong>Architecture full-stack moderne</strong> avec Vue.js 3 côté front et Symfony 7.1 + API Platform côté back. 
+                                        Système de <strong>matching automatique</strong> entre offres et demandes d'échange.
+                                    </p>
+                                    
+                                    <p class="project-description textColor2 mb-3">
+                                        <strong>Performances optimisées :</strong> lazy loading, images WebP, Tailwind CSS sans ombres pour éviter les repaints. 
+                                        <strong>API RESTful sécurisée</strong> avec authentification JWT Bearer et architecture SOLID 
+                                        côté front avec composants Vue réutilisables.
+                                    </p>
+                                    
+                                    <div class="project-company-info mb-3 p-3 rounded" style="background: rgba(48, 164, 108, 0.1); border-left: 3px solid var(--bs-success);">
+                                        <h5 class="titleColor fw-bold mb-2">
+                                            <i class="fa-solid fa-exchange-alt me-2"></i>Plateforme d'Échange Gaming
+                                        </h5>
+                                        <p class="project-description textColor2 mb-2">
+                                            Plateforme permettant aux joueurs de <strong>publier des offres d'échange</strong>, consulter les propositions 
+                                            disponibles et <strong>valider automatiquement</strong> les transactions. UX fluide avec routing Vue Router, 
+                                            recherche dynamique et design system cohérent.
+                                        </p>
+                                        <p class="project-description textColor2 mb-0">
+                                            <strong>Architecture technique :</strong> Front séparé du back, API Platform pour les endpoints REST, 
+                                            gestion complexe des relations Doctrine, optimisations mobiles et sécurité production-ready.
+                                        </p>
+                                    </div>
+                                    
+                                    <p class="project-quote fst-italic textColor2 mb-3">
+                                        "Full-stack moderne : Vue.js 3, Symfony 7.1, optimisations performances et architecture SOLID."
+                                    </p>
+                                </div>
+                                
+                                <div class="project-actions d-flex align-items-center gap-3">
+                                    <a href="https://exchange-pocket.vercel.app/" class="btn btn-success btn-change6" target="_blank">
+                                        <i class="fa-solid fa-external-link-alt me-2"></i>Voir l'application
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
               <!-- 5. Alpine -->
               <div class="swiper-slide">
                 <div class="project-card rounded-4 overflow-hidden shadow-lg">
@@ -1034,33 +1131,60 @@
                         <div class="col-12 col-md-8">
                             <div class="project-content p-4">
                                 <div>
-                                    <h3 class="project-title titleColor fw-bold mb-3">ALPINE CONFIGURATOR</h3>
+                                    <h3 class="project-title titleColor fw-bold mb-3">ALPINE WEBSITE SHOWCASE</h3>
                                     
                                     <!-- Technologies utilisées avec logos -->
                                     <div class="project-technologies mb-3">
                                         <div class="d-flex align-items-center flex-wrap gap-1">
                                             <span class="tech-badge">
-                                                <i class="fa-brands fa-js-square" style="color: #f7df1e;"></i>
-                                                <span>JavaScript</span>
-                                            </span>
-                                            <span class="tech-badge">
                                                 <i class="fa-brands fa-react" style="color: #61dafb;"></i>
-                                                <span>Next.js</span>
+                                                <span>Next.js 14</span>
                                             </span>
                                             <span class="tech-badge">
-                                                <i class="fa-solid fa-database" style="color: #764abc;"></i>
-                                                <span>Redux</span>
+                                                <i class="fa-brands fa-js-square" style="color: #f7df1e;"></i>
+                                                <span>TypeScript</span>
+                                            </span>
+                                            <span class="tech-badge">
+                                                <i class="fa-solid fa-wind" style="color: #06b6d4;"></i>
+                                                <span>Tailwind 3</span>
+                                            </span>
+                                            <span class="tech-badge">
+                                                <i class="fa-solid fa-mobile-alt" style="color: #ff6b6b;"></i>
+                                                <span>Framer Motion</span>
                                             </span>
                                         </div>
                                     </div>
                                     
                                     <p class="project-description textColor2 mb-3">
-                                        Reproduction de la page d'accueil Alpine et développement d'un configurateur interactif. 
-                                        Application web permettant de découvrir la marque Alpine.
+                                        Reproduction fidèle du <strong>site officiel Alpine</strong> avec développement d'un 
+                                        <strong>configurateur interactif A110/A290</strong>. Application React moderne intégrant 
+                                        l'univers sportif Alpine : <strong>Formule 1®, WEC, lifestyle</strong> et collections exclusives.
                                     </p>
                                     
+                                    <p class="project-description textColor2 mb-3">
+                                        <strong>Interface immersive</strong> avec animations Framer Motion, sections dédiées au 
+                                        <strong>sport automobile</strong> (F1®, endurance), collaborations lifestyle et 
+                                        <strong>configurateur temps réel</strong> des modèles iconiques A110 et A290.
+                                    </p>
+                                    
+                                    <div class="project-company-info mb-3 p-3 rounded" style="background: rgba(48, 164, 108, 0.1); border-left: 3px solid var(--bs-success);">
+                                        <h5 class="titleColor fw-bold mb-2">
+                                            <i class="fa-solid fa-car-side me-2"></i>Alpine - L'Art de la Performance
+                                        </h5>
+                                        <p class="project-description textColor2 mb-2">
+                                            <strong>Alpine</strong> incarne <strong>"l'agilité française"</strong> dans l'automobile sportive. 
+                                            Marque légendaire avec l'A110, leader en <strong>Formule 1®</strong> et championnat d'endurance WEC. 
+                                            Univers unique mêlant <strong>héritage sportif, innovation technologique</strong> et lifestyle premium.
+                                        </p>
+                                        <p class="project-description textColor2 mb-0">
+                                            <strong>Projet showcase :</strong> Reproduction technique du site officiel avec focus sur 
+                                            l'<strong>expérience utilisateur immersive</strong>, animations fluides et configurateur 
+                                            interactif fidèle à l'identité visuelle Alpine.
+                                        </p>
+                                    </div>
+                                    
                                     <p class="project-quote fst-italic textColor2 mb-3">
-                                        "Développement d'une application web permettant de découvrir la marque."
+                                        "Next.js 14 moderne : reproduction fidèle, configurateur interactif, animations premium et responsive design."
                                     </p>
                                 </div>
                                 
@@ -1089,33 +1213,156 @@
     <div style="height: 60px;"></div>
     
     <!-- Contact Section -->
+    <section class="container-fluid" id="contact">
+        <div class="row justify-content-center">
+            <!-- Titre de section Contact -->
+            <div class="col-12 text-center mb-5">
+                <h2 class="section-title">CONTACT</h2>
+                <div class="section-separator"></div>
+                <p class="textColor2 mt-3 mb-0 contact-subtitle">
+                    Vous avez un projet en tête ? Discutons-en !
+                </p>
+            </div>
+            
+            <!-- Container principal du formulaire -->
+            <div class="col-12 col-lg-10">
+                <div class="row align-items-center">
+                    <!-- Informations de contact (gauche) -->
+                    <div class="col-12 col-md-6 mb-5 mb-md-0">
+                        <div class="contact-info">
+                            <h3 class="titleColor mb-4 contact-info-title">
+                                <i class="fa-solid fa-paper-plane me-3 text-success"></i>
+                                Parlons de votre projet
+                            </h3>
+                            
+                            <div class="contact-info-item mb-4">
+                                <div class="contact-icon-wrapper">
+                                    <i class="fa-solid fa-rocket contact-icon"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h5 class="titleColor mb-2">Applications CRM & Outils Métier</h5>
+                                    <p class="textColor2 mb-0">Solutions personnalisées pour optimiser la productivité de vos équipes</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item mb-4">
+                                <div class="contact-icon-wrapper">
+                                    <i class="fa-solid fa-clock contact-icon"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h5 class="titleColor mb-2">Réponse rapide</h5>
+                                    <p class="textColor2 mb-0">Je vous réponds sous 24h pour discuter de votre projet</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item mb-4">
+                                <div class="contact-icon-wrapper">
+                                    <i class="fa-solid fa-handshake contact-icon"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h5 class="titleColor mb-2">Expertise CRM & Back-office</h5>
+                                    <p class="textColor2 mb-0">Spécialiste des interfaces d'administration et systèmes de gestion</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Social links -->
+                            <div class="contact-social mt-4">
+                                <p class="titleColor mb-3">Retrouvez-moi aussi sur :</p>
+                                <div class="d-flex gap-3">
+                                    <a href="https://www.linkedin.com/in/christophe-delahaye-b61446186/" target="_blank" class="social-link linkedin">
+                                        <i class="fa-brands fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="https://github.com/Xenophylius" target="_blank" class="social-link github">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                    <a href="mailto:sirxofficial@gmail.com" class="social-link email">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Formulaire (droite) -->
+                    <div class="col-12 col-md-6">
+                        <div class="contact-form-container">
+                            <form action="./process_contact.php" method="post" class="modern-contact-form" id="contactForm">
+                                <!-- Champ Nom -->
+                                <div class="form-group-modern mb-4">
+                                    <div class="input-wrapper">
+                                        <input type="text" id="contactName" name="name" class="form-control-modern" required autocomplete="name">
+                                        <label for="contactName" class="form-label-modern">
+                                            <i class="fa-solid fa-user label-icon"></i>
+                                            <span class="label-text">Votre nom</span>
+                                        </label>
+                                        <div class="input-border"></div>
+                                    </div>
+                                </div>
 
-    <section class="container-fluid row justify-content-center pe-0" id="contact">
-        <!-- Titre de section Contact -->
-        <div class="col-12 text-center mb-5">
-            <h2 class="section-title">CONTACT</h2>
-            <div class="section-separator"></div>
+                                <!-- Champ Email -->
+                                <div class="form-group-modern mb-4">
+                                    <div class="input-wrapper">
+                                        <input type="email" id="contactEmail" name="mail" class="form-control-modern" required autocomplete="email">
+                                        <label for="contactEmail" class="form-label-modern">
+                                            <i class="fa-solid fa-envelope label-icon"></i>
+                                            <span class="label-text">Votre email</span>
+                                        </label>
+                                        <div class="input-border"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Champ Sujet -->
+                                <div class="form-group-modern mb-4">
+                                    <div class="input-wrapper">
+                                        <select id="contactSubject" name="subject" class="form-control-modern" required>
+                                            <option value="" disabled selected hidden></option>
+                                            <option value="Nouveau projet">🚀 Nouveau projet</option>
+                                            <option value="Collaboration">🤝 Collaboration</option>
+                                            <option value="Conseil technique">💡 Conseil technique</option>
+                                            <option value="Autre">💬 Autre demande</option>
+                                        </select>
+                                        <label for="contactSubject" class="form-label-modern">
+                                            <i class="fa-solid fa-tag label-icon"></i>
+                                            <span class="label-text">Sujet de votre message</span>
+                                        </label>
+                                        <div class="input-border"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Champ Message -->
+                                <div class="form-group-modern mb-4">
+                                    <div class="input-wrapper">
+                                        <textarea id="contactMessage" name="message" class="form-control-modern textarea-modern" rows="5" required placeholder="Décrivez-moi votre projet, vos besoins, vos idées..."></textarea>
+                                        <label for="contactMessage" class="form-label-modern textarea-label">
+                                            <i class="fa-solid fa-message label-icon"></i>
+                                            <span class="label-text">Votre message</span>
+                                        </label>
+                                        <div class="input-border"></div>
+                                    </div>
+                                </div>
+                            
+                                <!-- Bouton d'envoi -->
+                                <div class="text-center">
+                                    <button type="submit" class="btn-send-modern" id="contactSubmit">
+                                        <span class="btn-text">
+                                            <i class="fa-solid fa-paper-plane me-2"></i>
+                                            Envoyer le message
+                                        </span>
+                                        <span class="btn-loading" style="display: none;">
+                                            <i class="fa-solid fa-spinner fa-spin me-2"></i>
+                                            Envoi en cours...
+                                        </span>
+                                        <div class="btn-success-check" style="display: none;">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <form action="./process_contact.php" method="post" class="textColor2 col-12 col-sm-8 col-md-6 col-lg-4 mt-2">
-            <div data-mdb-input-init class="form-outline mb-4">
-              <input type="text" id="form4Example1" name="name" class="form-control" required/>
-              <label class="form-label" for="form4Example1" id="contactName">Name</label>
-            </div>
-
-            <div data-mdb-input-init class="form-outline mb-4">
-              <input type="email" id="form4Example2" name="mail" class="form-control" required/>
-              <label class="form-label" for="form4Example2" id="contactMail">Email address</label>
-            </div>
-
-            <div data-mdb-input-init class="form-outline mb-4">
-              <textarea class="form-control" id="form4Example3" name="message" rows="4" required></textarea>
-              <label class="form-label" for="form4Example3">Message</label>
-            </div>
-        
-            <div class="text-center">
-              <button data-mdb-ripple-init type="submit" class="btn btn-success btn-block mb-4 btn-change6 " id="contactbutton">Send</button>
-            </div>
-          </form>
     </section>
 </main>
     <footer class="bg-transparent blurDiv text-center">
@@ -1126,7 +1373,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-2.0.3.min.js" ></script>
-	  <script src="toastr.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     
     <!-- Configuration et gestion des notifications toastr -->
     <script>

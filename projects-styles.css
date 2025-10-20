@@ -222,7 +222,7 @@ html {
 
 /* Ajustement spécifique pour l'image Cyclable - approche différente */
 .project-image[src*="cyclable-ecommerce"] {
-    object-fit: contain; /* Garde l'image entière visible */
+    object-fit: cover; /* Garde l'image entière visible */
     object-position: top; /* Commence par le haut */
     height: auto; /* Hauteur automatique pour l'image longue */
     min-height: 100%; /* Minimum la hauteur du container */
@@ -235,7 +235,7 @@ html {
 
 /* Styles spécifiques pour l'image CyclaParc */
 .project-image[src*="app-cyclaparc"] {
-    object-fit: contain; /* Garde l'image entière visible */
+    object-fit: cover; /* Garde l'image entière visible */
     object-position: top; /* Commence par le haut */
     height: auto; /* Hauteur automatique pour l'image longue */
     min-height: 100%; /* Minimum la hauteur du container */
@@ -257,7 +257,7 @@ html {
 
 /* Styles spécifiques pour l'image Exchange Pocket */
 .project-image[src*="exchange"] {
-    object-fit: contain; /* Garde l'image entière visible */
+    object-fit: cover; /* Garde l'image entière visible */
     object-position: top; /* Commence par le haut */
     height: auto; /* Hauteur automatique pour l'image longue */
     min-height: 100%; /* Minimum la hauteur du container */
@@ -347,15 +347,63 @@ html {
     /* Suppression de la limite de hauteur fixe */
     .project-card {
         max-width: 100%;
-        width: 95%;
-        min-height: auto !important; /* Auto height pour s'adapter au contenu */
+        width: 98% !important; /* Presque toute la largeur */
+        min-height: auto !important;
         height: auto !important;
+        padding: 0 !important; /* Retirer tout padding interne */
+        overflow: hidden; /* Garder l'overflow hidden pour les bordures arrondies */
+    }
+    
+    /* Container image - pleine largeur absolue */
+    .project-image-container {
+        height: 250px !important;
+        width: 100% !important;
+        margin: 0 !important;
+        overflow: hidden;
+        border-radius: 1rem 1rem 0 0 !important;
+        position: relative;
+    }
+    
+    /* Image responsive en pleine largeur */
+    .project-image {
+        width: 100% !important;
+        height: auto !important; /* Hauteur automatique pour garder les proportions */
+        min-height: 100% !important; /* Minimum la hauteur du container */
+        object-fit: cover;
+        object-position: top; /* Commencer par le haut */
+        display: block;
+        margin: 0 !important;
+        padding: 0 !important;
+        transition: transform 3s ease-in-out; /* Réactiver la transition */
+    }
+    
+    /* Effet de scroll au hover sur mobile */
+    .project-image-container:hover .project-image {
+        transform: translateY(calc(-100% + 250px)); /* Fait défiler vers le bas */
+    }
+    
+    /* Ajustements spécifiques pour les différentes images sur mobile */
+    .project-image-container:hover .project-image[src*="cyclable-ecommerce"] {
+        transform: translateY(-60%); /* Scroll adapté pour Cyclable */
+    }
+    
+    .project-image-container:hover .project-image[src*="app-cyclaparc"] {
+        transform: translateY(-30%); /* Scroll adapté pour CyclaParc */
+    }
+    
+    .project-image-container:hover .project-image[src*="audisio-admin"] {
+        transform: translateY(-25%); /* Scroll léger pour Audisio */
+    }
+    
+    .project-image-container:hover .project-image[src*="exchange"] {
+        transform: translateY(-35%); /* Scroll adapté pour Exchange */
     }
     
     /* Structure en colonne : image en haut, contenu en bas */
     .project-card .row {
         flex-direction: column !important;
         height: auto !important;
+        margin: 0 !important;
     }
     
     /* Image en haut sur toute la largeur */
@@ -363,28 +411,16 @@ html {
         flex: none !important;
         max-width: 100% !important;
         width: 100% !important;
-        order: 1; /* Image en premier */
+        order: 1;
+        padding: 0 !important;
     }
     
     .project-card .col-12.col-md-8 {
         flex: none !important;
         max-width: 100% !important;
         width: 100% !important;
-        order: 2; /* Contenu en second */
-    }
-    
-    /* Container image - hauteur adaptée */
-    .project-image-container {
-        height: 220px !important; /* Hauteur légèrement plus grande */
-        width: 100%;
-        overflow: hidden;
-    }
-    
-    /* Image responsive */
-    .project-image {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover;
+        order: 2;
+        padding: 0 !important;
     }
     
     /* Contenu avec padding ajusté */
@@ -453,11 +489,14 @@ html {
     
     /* Override des hauteurs fixes pour mobile */
     .mySwiper {
-        height: auto !important; /* Pas de hauteur fixe sur mobile */
+        height: auto !important;
+        padding: 0 5px !important; /* Réduire le padding horizontal */
+        margin: 0 !important;
     }
     
     .swiper-slide {
-        height: auto !important; /* Hauteur automatique pour chaque slide */
+        height: auto !important;
+        padding: 0 2px !important; /* Minimal padding entre les slides */
     }
     
     .project-card {
@@ -635,19 +674,22 @@ div.swiper.mySwiper .swiper-button-prev {
     box-shadow: none !important;
     filter: none !important;
     perspective: none !important;
-    z-index: 100 !important;
+    z-index: 999 !important; /* Z-index très élevé pour être sûr qu'ils sont cliquables */
     /* Forcer la position normale */
     position: absolute !important;
     top: 50% !important;
     margin-top: -25px !important;
+    /* S'assurer qu'ils sont cliquables */
+    pointer-events: auto !important;
+    cursor: pointer !important;
 }
 
 .swiper.mySwiper .swiper-button-next {
-    right: 10px !important;
+    right: 20px !important;
 }
 
 .swiper.mySwiper .swiper-button-prev {
-    left: 10px !important;
+    left: 20px !important;
 }
 
 .swiper.mySwiper .swiper-button-next:after,
@@ -735,4 +777,222 @@ div.swiper.mySwiper .swiper-button-prev:hover {
 .mySwiper .swiper-slide .project-card {
     filter: none !important;
     opacity: 1 !important;
+}
+
+/* ===== SCROLLBAR ELEGANTE POUR PROJECT CONTENT ===== */
+
+/* Configuration du contenu scrollable */
+.project-content {
+    max-height: 100%;
+    overflow-y: auto; /* Permet le scroll vertical */
+    overflow-x: hidden; /* Cache le scroll horizontal */
+    scrollbar-width: thin; /* Firefox - scrollbar fine */
+    scrollbar-color: var(--bs-success) rgba(255, 255, 255, 0.1); /* Firefox - couleurs */
+    scroll-behavior: smooth; /* Scroll fluide */
+    /* Optimisations pour un scroll plus fluide */
+    will-change: scroll-position;
+    transform: translateZ(0); /* Force l'accélération GPU */
+    -webkit-overflow-scrolling: touch; /* Scroll natif sur iOS */
+    scroll-padding: 0; /* Pas de padding de scroll */
+    overscroll-behavior: contain; /* Empêche le scroll bounce */
+}
+
+/* Scrollbar WebKit (Chrome, Safari, Edge) */
+.project-content::-webkit-scrollbar {
+    width: 8px; /* Largeur de la scrollbar */
+}
+
+.project-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05); /* Fond du track */
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--bs-success), #2a8f5a); /* Dégradé vert thème */
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.project-content::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #3db572, var(--bs-success)); /* Dégradé inversé au hover */
+    box-shadow: 0 0 8px rgba(48, 164, 108, 0.4);
+    transform: scaleX(1.2); /* Légère expansion au hover */
+}
+
+.project-content::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(180deg, #2a8f5a, #1f6b42); /* Plus sombre quand actif */
+}
+
+.project-content::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/* Adaptation pour le mode clair */
+.light-mode .project-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .project-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--bs-success), #2a8f5a);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .project-content::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #3db572, var(--bs-success));
+    box-shadow: 0 0 8px rgba(48, 164, 108, 0.6);
+}
+
+/* Firefox - adaptation pour mode clair */
+.light-mode .project-content {
+    scrollbar-color: var(--bs-success) rgba(0, 0, 0, 0.1);
+}
+
+/* Animation douce lors du scroll */
+.project-content {
+    scroll-behavior: smooth;
+}
+
+/* Indicateur subtil que le contenu est scrollable - version simplifiée */
+.project-content::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 8px;
+    height: 20px;
+    background: linear-gradient(180deg, rgba(48, 164, 108, 0.3), transparent);
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.scrollable-content:hover::before {
+    opacity: 0.7;
+}
+
+/* Fade effect en bas pour indiquer plus de contenu - version améliorée */
+.project-content::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 12px; /* Laisser place à la scrollbar */
+    height: 15px;
+    background: linear-gradient(transparent 0%, var(--card-bg-dark) 100%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.light-mode .project-content::after {
+    background: linear-gradient(transparent 0%, var(--card-bg-light) 100%);
+}
+
+/* Afficher le fade seulement quand le contenu déborde ET qu'on n'est pas en bas */
+.project-content[data-has-overflow]:not(.scrolled-to-bottom)::after {
+    opacity: 0.6;
+}
+
+/* Indicateur de contenu scrollable */
+.scrollable-content::before {
+    opacity: 0.8 !important;
+    animation: scrollIndicatorPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollIndicatorPulse {
+    0%, 100% { opacity: 0.3; transform: translateY(0); }
+    50% { opacity: 0.8; transform: translateY(5px); }
+}
+
+/* Animation de la scrollbar au scroll */
+.project-content::-webkit-scrollbar-thumb {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Amélioration du contraste en mode sombre */
+.project-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+}
+
+.project-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, 
+        rgba(48, 164, 108, 0.9), 
+        rgba(42, 143, 90, 0.9)
+    );
+    backdrop-filter: blur(5px);
+}
+
+/* Animation au hover plus fluide */
+.project-content::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, 
+        rgba(61, 181, 114, 0.95), 
+        rgba(48, 164, 108, 0.95)
+    );
+    box-shadow: 
+        0 0 8px rgba(48, 164, 108, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: scaleX(1.3);
+}
+
+/* Effet de glow subtil sur la track au hover du contenu */
+.project-content:hover::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 0 6px rgba(48, 164, 108, 0.1);
+}
+
+/* Styles pour l'effet parallax de l'indicateur */
+.project-content::before {
+    transform: translateY(var(--scroll-indicator-offset, 0px));
+}
+
+/* Responsive - scrollbar plus fine sur mobile */
+@media (max-width: 768px) {
+    .project-content::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    .project-content::-webkit-scrollbar-thumb:hover {
+        transform: scaleX(1.1);
+    }
+    
+    .project-content::before {
+        width: 8px;
+        height: 20px;
+    }
+    
+    /* Sur mobile, scrollbar visible seulement au scroll */
+    .project-content::-webkit-scrollbar {
+        width: 4px;
+    }
+    
+    .project-content:not(:hover)::-webkit-scrollbar-thumb {
+        background: rgba(48, 164, 108, 0.3);
+    }
+    
+    .project-content:hover::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, var(--bs-success), #2a8f5a);
+    }
+}
+
+/* Animation d'entrée pour les project-content au chargement */
+.project-content {
+    animation: projectContentFadeIn 0.6s ease-out;
+}
+
+@keyframes projectContentFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
